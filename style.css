@@ -4,12 +4,24 @@
   src: url("/fonts/europa-grotesk-sh-bold.otf") format("opentype");
   font-display: swap;
 }
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Bold.ttf") format("truetype");
+  font-display: swap;
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Regular.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 400;
+}
 /* GLOBAL CONFIG RESET */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: Inter;
 }
 
 select:focus,
@@ -73,7 +85,7 @@ body {
     transform: perspective(500px) rotateX(0deg) rotate(5deg);
   }
   100% {
-    transform: perspective(50px) rotateX(360deg) rotate(5deg);
+    transform: perspective(50px) rotateX(360deg) rotate(10deg);
   }
 }
 /* -------- PSEUDO CLASS --------- */
@@ -101,7 +113,12 @@ h1 {
   font-family: "Europa Grotesk SH", sans-serif;
   color: #333;
   letter-spacing: 0em;
-  margin: 0 0 5rem 0;
+  margin: 0 0 0.5rem 0;
+}
+
+h2 {
+  margin: 0 0 3rem 0;
+  font-family: "Inter", sans-serif;
 }
 
 p {

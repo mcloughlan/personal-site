@@ -5,12 +5,24 @@
 @font-face {
     font-family: "Europa Grotesk SH";
     src: url("/fonts/europa-grotesk-sh-bold.otf") format("opentype");
-    // font-weight: normal;
-    // font-style: normal;
     font-display: swap;
 }
 
-$font1: sans-serif;
+@font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Bold.ttf") format("truetype");
+    font-display: swap;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Regular.ttf") format("truetype");
+    font-display: swap;
+    font-weight: 400;
+}
+
+$font1: Inter;
 $font2: 'Lobster Two', cursive;
 $white: #fff;
 $black: #000;
@@ -112,7 +124,7 @@ body {
     }
 
     100% {
-        transform: perspective(50px) rotateX(360deg) rotate(5deg);
+        transform: perspective(50px) rotateX(360deg) rotate(10deg);
     }
 }
 
@@ -148,7 +160,12 @@ h1 {
     font-family: "Europa Grotesk SH", sans-serif;
     color: #333;
     letter-spacing: 0em;
-    margin: 0 0 5rem 0;
+    margin: 0 0 0.5rem 0;
+}
+
+h2 {
+    margin: 0 0 3rem 0;
+    font-family: "Inter", sans-serif;
 }
 
 p {
