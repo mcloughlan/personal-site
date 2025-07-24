@@ -2,6 +2,7 @@
 @font-face {
   font-family: "Europa Grotesk SH";
   src: url("/fonts/europa-grotesk-sh-bold.otf") format("opentype");
+  font-display: swap;
 }
 /* GLOBAL CONFIG RESET */
 * {
@@ -37,7 +38,7 @@ body {
   opacity: 0.08;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  filter: blur(2px);
+  filter: blur(3px);
 }
 .container .box {
   transform-style: preserve-3d;
