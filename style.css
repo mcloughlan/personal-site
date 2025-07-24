@@ -108,11 +108,14 @@ body {
   padding: 1rem;
 }
 
+h1,
+h2 {
+  color: #333;
+}
+
 h1 {
   font-size: 5rem;
   font-family: "Europa Grotesk SH", sans-serif;
-  color: #333;
-  letter-spacing: 0em;
   margin: 0 0 0.5rem 0;
 }
 
