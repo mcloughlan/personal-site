@@ -2,6 +2,8 @@ import markdownIt from "markdown-it";
 import markdownItAttrs from "markdown-it-attrs";
 import markdownItAnchor from "markdown-it-anchor";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import sitemap from "@quasibit/eleventy-plugin-sitemap";
+
 
 
 export default function (eleventyConfig) {
@@ -21,7 +23,15 @@ export default function (eleventyConfig) {
                 class: "heading-anchor"
             })
         });
+
     eleventyConfig.setLibrary("md", mdLib);
+
+    eleventyConfig.addPlugin(sitemap, {
+        sitemap: {
+            hostname: "https://mcloughlan.com",
+        },
+    });
+
 
     // other config
     eleventyConfig.addPassthroughCopy("assets");
