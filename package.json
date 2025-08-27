@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Just running md linters and spelling checkers for now\" && npm run check:md",
     "build-ghpages": "npx @11ty/eleventy --pathprefix=/personal-site/",
-    "build": "npx @11ty/eleventy"
+    "build": "npx @11ty/eleventy",
+    "prepare": "husky",
+    "lint:md": "markdownlint './projects/**/*.md'",
+    "spell:md": "cspell './projects/**/*.md'",
+    "check:md": "npm run spell:md && npm run lint:md"
   },
   "repository": {
     "type": "git",
@@ -25,5 +29,8 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-attrs": "^4.3.1"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
   }
 }

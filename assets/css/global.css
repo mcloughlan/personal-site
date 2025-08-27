@@ -33,11 +33,39 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
     font-family: "Europa Grotesk SH", sans-serif, monospace;
     /* Feel free to change to uppercase or something. Check cool variations*/
+    margin-top: 1.9rem;
+    margin-bottom: 0.5rem;
     text-transform: none;
 }
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
 
 a {
     color: var(--color-accent-1)
@@ -52,7 +80,7 @@ hr {
 
 table {
     border-spacing: 0;
-    background: var(--color-primary-background-faded-1);
+    background: var(--color-primary-background-faded-2);
     border-radius: 10px;
     width: fit-content;
     margin: 1rem 0rem 1rem 0rem;
@@ -60,7 +88,7 @@ table {
 
 thead th {
     /* Headers are slightly lighter than rest of table */
-    background: var(--color-primary-background-faded-2);
+    background: var(--color-primary-background-faded-3);
     font-weight: 600;
     text-align: left;
     padding: 1rem;
@@ -184,6 +212,7 @@ section.header {
 /* Footer styling */
 footer {
     margin-top: 2rem;
+    margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
 }
@@ -194,10 +223,15 @@ footer section {
     width: 100%;
 }
 
-footer a {
-    margin-top: 1rem;
+footer a.soft {
+    color: var(--color-primary-text-faded-1);
+}
+
+footer section p:first-of-type {
+    margin: 1.3rem 0 0.3rem 0;
 }
 
 footer p {
     color: var(--color-primary-text-faded-1);
+    margin: 0.3rem 0 0.3rem 0;
 }

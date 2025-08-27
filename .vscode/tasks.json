@@ -15,6 +15,12 @@
                 "@11ty/eleventy",
                 "--serve"
             ],
+            "presentation": { // Open in new tab and do not focus
+                "echo": true,
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared"
+            },
             "isBackground": true,
             "problemMatcher": { // Idk if this works. GPT created matcher
                 "owner": "custom",
@@ -53,6 +59,38 @@
             },
             "problemMatcher": [],
             "group": "none"
+        },
+        {
+            "label": "Lint Markdown",
+            "icon": {
+                "id": "checklist",
+                "color": "terminal.ansiYellow"
+            },
+            "type": "shell",
+            "command": "npm run lint:md",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            },
+            "problemMatcher": [
+                {
+                    "owner": "markdownlint",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceFolder}"
+                    ],
+                    "pattern": {
+                        "regexp": "^(.*?):(\\d+)(?::(\\d+))?\\s+([A-Za-z0-9_\\/\\-]+)\\s+(.*)$", // holy regex
+                        "file": 1,
+                        "line": 2,
+                        "column": 3,
+                        "code": 4,
+                        "message": 5
+                    }
+                }
+            ]
         }
     ],
     "inputs": [

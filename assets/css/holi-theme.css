@@ -34,7 +34,8 @@ pre[class*='language-'] {
     background: #030314;
     text-shadow: none;
     font-family: "Cascadia", Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-    font-size: 1em;
+    /* MODIFIED */
+    font-size: 0.8rem;
     line-height: 1.5;
     letter-spacing: .2px;
     white-space: pre;
@@ -69,7 +70,8 @@ code[class*='language-'] ::selection {
 pre[class*='language-'] {
     border: 1px solid #2a4555;
     border-radius: 5px;
-    padding: 1.5em 1em;
+    /* MODIFIED */
+    padding: 1em 1em;
     margin: 1em 0;
     overflow: auto;
 }

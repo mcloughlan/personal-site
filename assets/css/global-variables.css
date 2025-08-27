@@ -9,6 +9,8 @@
     --color-primary-background-faded-1: #0d0d0d;
     /* lighter than main and 1 */
     --color-primary-background-faded-2: #1b1b1b;
+    /* lighter than main, 1, 2 */
+    --color-primary-background-faded-3: #292929;
 
 
     /* Secondary/accent colors */
