@@ -1,0 +1,28 @@
+.ascii-art.small {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .ascii-art.large {
+        display: none;
+    }
+
+    .ascii-art.small {
+        display: block;
+    }
+}
+
+.ascii-title {
+    position: relative;
+    overflow: hidden;
+}
+
+.ascii-title pre {
+    max-width: 80vw;
+    z-index: 1;
+    position: relative;
+    font-family: monospace;
+    line-height: 1em;
+    white-space: pre;
+    font-size: 10px;
+}

@@ -1,5 +1,29 @@
 {
+  "name": "personal_site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/personal-site/",
+    "build": "npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcloughlan/personal-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcloughlan/personal-site/issues"
+  },
+  "homepage": "https://github.com/mcloughlan/personal-site#readme",
+  "description": "",
+  "type": "module",
   "dependencies": {
-    "sass": "^1.89.2"
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-attrs": "^4.3.1"
   }
 }

@@ -1,5 +1,8 @@
-# Created by https://www.toptal.com/developers/gitignore/api/macos,sass,node
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,sass,node
+# 11ty site generated files
+_site/
+
+# Created by https://www.toptal.com/developers/gitignore/api/node,macos
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,macos
 
 ### macOS ###
 # General
@@ -174,10 +177,4 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
-### Sass ###
-.sass-cache/
-*.css.map
-*.sass.map
-*.scss.map
-
-# End of https://www.toptal.com/developers/gitignore/api/macos,sass,node
+# End of https://www.toptal.com/developers/gitignore/api/node,macos

@@ -1,0 +1,41 @@
+{% extends "layouts/index.njk" %}
+{% block content %}
+<section class="header">
+    {% include "components/ascii-title.njk" %}
+    <p>
+        <i>I do lots of software and electronics and I also work with high powered lawn darts 🚀</i>
+    </p>
+</section>
+<section id="projects">
+    <h2>Projects</h2>
+    <strong>Just note that this will look empty for a while. This is all new and I'm in the process of writing it all
+        up</strong>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Decription</th>
+            </tr>
+        </thead>
+        <tbody>
+            {# TODO: add note here to add date and tags to projects #}
+            {%- for project in collections.project -%}
+            <tr>
+                <td><a href="{{ project.url }}">{{ project.data.title }}</a></td>
+                <td>{{ project.data.description }}</td>
+            </tr>
+            {%- endfor -%}
+        </tbody>
+    </table>
+</section>
+<section id="links">
+    <h2>Links</h2>
+    <ul>
+        <li class="linkedin"><a href="https://www.linkedin.com/in/freddy-mcloughlan/">Linkedin</a></li>
+        <li class="github"><a href="https://github.com/mcloughlan">Github</a></li>
+        <li class="algo"><a href="https://algo.mcloughlan.com/">Algo Notes</a></li>
+        <li class="stackoverflow"><a href="https://stackoverflow.com/users/14141223/freddy-mcloughlan">Stack
+                Overflow</a></li>
+    </ul>
+</section>
+{% endblock %}

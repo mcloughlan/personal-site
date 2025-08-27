@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include "../components/head.njk" %}
+    <link rel="stylesheet" href="/assets/css/projects.css">
+    <link rel="stylesheet" href="/assets/css/ascii-title.css">
+</head>
+
+<body>
+    <main>
+        <section class="header">
+            {% include "components/ascii-title.njk" %}
+        </section>
+        <section>
+            <h1 class="prefix" aria-hidden="true">Project</h1>
+            <span class="project-title">
+                <h1>
+                    {{ title }}
+                </h1>
+                <a href="/index.html" class="home-link">
+                    <img src="/assets/images/icons/home.svg" alt="Home">
+                </a>
+            </span>
+            <hr>
+        </section>
+        <section class="project-description">
+            <p>{{ description }}</p>
+        </section>
+        <section class="content">
+            {{ content | safe }}
+        </section>
+    </main>
+
+    {% include "../components/footer.njk" %}
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Eleventy Dev Server",
+            "icon": {
+                "id": "bug",
+                "color": "terminal.ansiGreen"
+            },
+            "type": "shell",
+            "command": "npx",
+            "args": [
+                "@11ty/eleventy",
+                "--serve"
+            ],
+            "isBackground": true,
+            "problemMatcher": { // Idk if this works. GPT created matcher
+                "owner": "custom",
+                "pattern": [
+                    {
+                        "regexp": ".",
+                        "file": 1,
+                        "location": 2,
+                        "message": 3
+                    }
+                ],
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".",
+                    "endsPattern": "Watching…"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Create New Project",
+            "icon": {
+                "id": "add",
+                "color": "terminal.ansiBlue"
+            },
+            "type": "shell",
+            "command": "mkdir -p \"${workspaceFolder}/projects/${input:projectName}\" && cp \"${workspaceFolder}/template.md\" \"${workspaceFolder}/projects/${input:projectName}/${input:projectName}.md\" && echo 'Created project: ${input:projectName}'",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            },
+            "problemMatcher": [],
+            "group": "none"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "projectName",
+            "type": "promptString",
+            "description": "Enter the new project name with no (prefferably) spaces",
+        }
+    ]
+}

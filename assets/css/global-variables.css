@@ -1,0 +1,18 @@
+:root {
+    /* Primary colors */
+    --color-primary-text: #d4d4d4;
+    --color-primary-text-faded-1: #787878;
+    --color-primary-text-faded-2: #393939;
+
+    --color-primary-background: #060606;
+    /* lighter than main */
+    --color-primary-background-faded-1: #0d0d0d;
+    /* lighter than main and 1 */
+    --color-primary-background-faded-2: #1b1b1b;
+
+
+    /* Secondary/accent colors */
+    --color-accent-1: #00e21a;
+    --color-accent-1-minimal: #00cc1825;
+
+}
