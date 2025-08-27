@@ -5,7 +5,7 @@ description: A persistent network uptime and speed logging Grafana exporter inte
 
 ## Dashboard screenshot
 
-![Screenshot of the NetCheck interface](/projects/netcheck/images/summary.webp){width=800px height=1256px loading=lazy}
+![Screenshot of the NetCheck interface](/projects/netcheck/images/summary.webp){width=800px height=1256px}
 
 From [https://github.com/mcloughlan/NetCheck](https://github.com/mcloughlan/NetCheck)
 
@@ -66,7 +66,7 @@ else:
     return None
 ```
 
-Then, based on when the number of devices online and the time the device joined the session, it would now know when to wait for the next test with the round robin effect.
+Then, based on the number of devices online and the time the device joined the session, it would now know when to wait for the next test with the round robin effect.
 
 ![distributor design flowchart](https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/distributor.svg){loading=lazy}
 
