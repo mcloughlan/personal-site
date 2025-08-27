@@ -8,6 +8,7 @@
     <title>
         
         NetCheck
+        
     </title>
     <meta name="description" content="A persistent network uptime and speed logging Grafana exporter intended for use on multiple Raspberry Pis">
     <!-- Open Graph / social sharing -->
@@ -87,7 +88,7 @@
         </section>
         <section class="content">
             <h2 id="dashboard-screenshot" tabindex="-1">Dashboard screenshot <a class="heading-anchor" href="#dashboard-screenshot" aria-hidden="true">§</a></h2>
-<p><img src="/projects/netcheck/images/summary.webp" alt="Screenshot of the NetCheck interface" width="800px" height="1256px" loading="lazy"></p>
+<p><img src="/projects/netcheck/images/summary.webp" alt="Screenshot of the NetCheck interface" width="800px" height="1256px"></p>
 <p>From <a href="https://github.com/mcloughlan/NetCheck">https://github.com/mcloughlan/NetCheck</a></p>
 <h2 id="introduction" tabindex="-1">Introduction <a class="heading-anchor" href="#introduction" aria-hidden="true">§</a></h2>
 <p>I used to work at a residential college where the IT team had the occasional issue of APs dropping in and out. So we would go and sit next to it and check if it was working. Sometimes that was enough to tell it was broken and needed more investigation. However sometimes it needed to be monitored for hours at a time to find the problem.</p>
@@ -128,7 +129,7 @@ Given there was no obvious way to ask Ookla if the next test test would be limit
     logging<span class="token punctuation">.</span>error<span class="token punctuation">(</span>
         <span class="token string-interpolation"><span class="token string">f"Valid HTTP JSON response collected, but API returned status: </span><span class="token interpolation"><span class="token punctuation">{</span>RESULT_JSON<span class="token punctuation">[</span><span class="token string">'status'</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> <span class="token boolean">None</span></code></pre>
-<p>Then, based on when the number of devices online and the time the device joined the session, it would now know when to wait for the next test with the round robin effect.</p>
+<p>Then, based on the number of devices online and the time the device joined the session, it would now know when to wait for the next test with the round robin effect.</p>
 <p><img src="https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/distributor.svg" alt="distributor design flowchart" loading="lazy"></p>
 <p>This design relies on the fact that Ookla allows tests 'on demand' rather than following an exact and strict regiment of 'one per hour per IP'. It also assumes the user is setting up NetCheck on the one LAN with a single WAN IP shared between all clients. Otherwise each client would be limited more than they need to be.</p>
 <p>Also an hour <a href="https://github.com/mcloughlan/NetCheck/blob/3494e07d93f0e3dabec84038ad4d26f69902a494/docker-compose.yml#L14">wasn't hard coded</a> in the case someone had a <a href="https://github.com/mcloughlan/NetCheck/blob/3494e07d93f0e3dabec84038ad4d26f69902a494/docker-compose.yml#L16">private speedtest server</a> and could run a test every few minutes.</p>
