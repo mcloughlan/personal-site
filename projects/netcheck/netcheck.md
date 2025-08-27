@@ -19,34 +19,33 @@ So there were no tools we could use to validate these issues, and no time to sit
 
 ## Design
 
-![netcheck design flowchart](https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/flowchart.svg)
+![Netcheck design flowchart](https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/flowchart.svg)
 
-This needed to be as simple and easy to deploy as possible. With the capabilities for seemless scaling with multiple deployed nodes. The design also needed to be **completely free** (excluding paying for a raspberry pi) by using the free configuration of Grafana Cloud and the Grafana dashboard. Note that Ookla speedtest (one of the metric gatherers for this) has a rate limit for your IP.
+This needed to be as simple and easy to deploy as possible. With the capabilities for seamless scaling with multiple deployed nodes. The design also needed to be **completely free** (excluding paying for a raspberry pi) by using the free configuration of Grafana Cloud and the Grafana dashboard. Note that Ookla speedtest (one of the metric gatherers for this) has a rate limit for your IP.
 
 ### Setup & deployability
 
-With these restraints, I designed a system where each Pi would host a Docker container that runs the whole system which is configured to boot on start and restart on fail. This way, there was no painful setup across different systems and system-dependent errors were less common in development, given the whole thing was containerised. After the Docker setup, you could just pull the power plug on the Pi, move it around and plug it back in and the whole thing would **just work**. This acheived my goals of making it easy to deploy.
+With these restraints, I designed a system where each Pi would host a Docker container that runs the whole system which is configured to boot on start and restart on fail. This way, there was no painful setup across different systems and system-dependent errors were less common in development, given the whole thing was containerised. After the Docker setup, you could just pull the power plug on the Pi, move it around and plug it back in and the whole thing would **just work**. This achieved my goals of making it easy to deploy.
 
 ### Scaling with ease
 
 Now what if I want node 1 in this part of the building, then node 3 over here and node 2 can just sit in my office?
 
-Well the visualisation and UI design of this was easy. Given each device has a [hard coded name in the config](https://github.com/mcloughlan/NetCheck/blob/3494e07d93f0e3dabec84038ad4d26f69902a494/templates/.env.template#L20), Grafana would have a dedicated section for the device you selected at the top (see [dashboard](#dashboard-screenshot)). Then if you had multiple devices, they would just tile up next to each other in the upper summary section. Pushing to the database was also okay, because you have each device with a differnet name. 
+Well the visualisation and UI design of this was easy. Given each device has a [hard coded name in the config](https://github.com/mcloughlan/NetCheck/blob/3494e07d93f0e3dabec84038ad4d26f69902a494/templates/.env.template#L20), Grafana would have a dedicated section for the device you selected at the top (see [dashboard](#dashboard-screenshot)). Then if you had multiple devices, they would just tile up next to each other in the upper summary section. Pushing to the database was also okay, because you have each device with a different name.
 
 But the hard part was adhering to the *'one speedtest per hour per IP address'* rule by Ookla.
-Given there was no obvious way to ask Ookla if the next test test would be limited (they probably rate limit with more rules than just 1 per hour), I decided I would just keep tabs on how many I've been running, and who's turn it is. 
+Given there was no obvious way to ask Ookla if the next test test would be limited (they probably rate limit with more rules than just 1 per hour), I decided I would just keep tabs on how many I've been running, and who's turn it is.
 
 So I needed to
 
 1. Keep track of when the last test was
     - This needed to be available on the cloud so it was available to all devices in the system. Because some devices could go offline when others want to check their position in the queue
-1. Figure out if the device can run a test ("*will this test cause a rate limit?*") 
+1. Figure out if the device can run a test ("*will this test cause a rate limit?*")
 1. Run tests in a round robin way to equally query each device
-
 
 #### Speedtest distributor/orchestrator design
 
-*Firstly, shoutout to my wonderful friend and career mentor James Baker who put me onto the orchestrator/driver model.*
+*Firstly, shout-out to my wonderful friend and career mentor James Baker who put me onto the orchestrator/driver model.*
 
 <br>
 
@@ -67,7 +66,7 @@ else:
     return None
 ```
 
-Then, based on when the number of devices online and the time the device joined the session, it would now know when to wait for the next test with the round robin effect. 
+Then, based on when the number of devices online and the time the device joined the session, it would now know when to wait for the next test with the round robin effect.
 
 ![distributor design flowchart](https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/distributor.svg)
 
@@ -79,14 +78,14 @@ Also an hour [wasn't hard coded](https://github.com/mcloughlan/NetCheck/blob/349
 
 This project taught me so much stuff
 
-- Distributed computing (or at least distrubuted *computers*)
+- Distributed computing (or at least distributed *computers*)
 - Docker and containers
 - Grafana
-    - And more stuff about databases
+  - And more stuff about databases
 - Logging
 - Remote access
 - The security concerns of BSSIDs (lol)
 - Documenting for others
-- Desinging dynamic UI for alerts and error identification
+- Designing dynamic UI for alerts and error identification
 
-Thanks to Ben Fon who got me onto making this project and bought some Pis for it. 
+Thanks to Ben Fon who got me onto making this project and bought some Pis for it.
