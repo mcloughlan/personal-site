@@ -25,6 +25,7 @@ export default function (eleventyConfig) {
 
     // other config
     eleventyConfig.addPassthroughCopy("assets");
+    eleventyConfig.addPassthroughCopy("projects/**/images")
     eleventyConfig.addPlugin(syntaxHighlight);
 
 }

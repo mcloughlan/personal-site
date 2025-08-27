@@ -5,7 +5,7 @@ description: A persistent network uptime and speed logging Grafana exporter inte
 
 ## Dashboard screenshot
 
-![Screenshot of the NetCheck interface](https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/summary.png)
+![Screenshot of the NetCheck interface](/projects/netcheck/images/summary.webp){width=800px height=1256px loading=lazy}
 
 From [https://github.com/mcloughlan/NetCheck](https://github.com/mcloughlan/NetCheck)
 
@@ -19,7 +19,7 @@ So there were no tools we could use to validate these issues, and no time to sit
 
 ## Design
 
-![Netcheck design flowchart](https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/flowchart.svg)
+![Netcheck design flowchart](https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/flowchart.svg){loading=lazy}
 
 This needed to be as simple and easy to deploy as possible. With the capabilities for seamless scaling with multiple deployed nodes. The design also needed to be **completely free** (excluding paying for a raspberry pi) by using the free configuration of Grafana Cloud and the Grafana dashboard. Note that Ookla speedtest (one of the metric gatherers for this) has a rate limit for your IP.
 
@@ -68,7 +68,7 @@ else:
 
 Then, based on when the number of devices online and the time the device joined the session, it would now know when to wait for the next test with the round robin effect.
 
-![distributor design flowchart](https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/distributor.svg)
+![distributor design flowchart](https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/distributor.svg){loading=lazy}
 
 This design relies on the fact that Ookla allows tests 'on demand' rather than following an exact and strict regiment of 'one per hour per IP'. It also assumes the user is setting up NetCheck on the one LAN with a single WAN IP shared between all clients. Otherwise each client would be limited more than they need to be.
 
