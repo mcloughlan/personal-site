@@ -94,13 +94,13 @@
 <p>We didn't have access to any of the AP infrastructure, as this was managed by an external provider. But any time we wanted an issue solved with the network we needed to contact that provider with details of the issue. So we needed to both verify the issue ourselves, and build a case for the provider to look into.</p>
 <p>So there were no tools we could use to validate these issues, and no time to sit next to an AP and check it was playing up. That's where this project came into play. The idea was we could just leave a bunch of Raspberry Pis in locations that were possibly troublesome, and then wait for them to pickup an issue automatically.</p>
 <h2 id="design" tabindex="-1">Design <a class="heading-anchor" href="#design" aria-hidden="true">§</a></h2>
-<p><img src="https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/flowchart.svg" alt="netcheck design flowchart"></p>
-<p>This needed to be as simple and easy to deploy as possible. With the capabilities for seemless scaling with multiple deployed nodes. The design also needed to be <strong>completely free</strong> (excluding paying for a raspberry pi) by using the free configuration of Grafana Cloud and the Grafana dashboard. Note that Ookla speedtest (one of the metric gatherers for this) has a rate limit for your IP.</p>
+<p><img src="https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/flowchart.svg" alt="Netcheck design flowchart"></p>
+<p>This needed to be as simple and easy to deploy as possible. With the capabilities for seamless scaling with multiple deployed nodes. The design also needed to be <strong>completely free</strong> (excluding paying for a raspberry pi) by using the free configuration of Grafana Cloud and the Grafana dashboard. Note that Ookla speedtest (one of the metric gatherers for this) has a rate limit for your IP.</p>
 <h3 id="setup-%26-deployability" tabindex="-1">Setup &amp; deployability <a class="heading-anchor" href="#setup-%26-deployability" aria-hidden="true">§</a></h3>
-<p>With these restraints, I designed a system where each Pi would host a Docker container that runs the whole system which is configured to boot on start and restart on fail. This way, there was no painful setup across different systems and system-dependent errors were less common in development, given the whole thing was containerised. After the Docker setup, you could just pull the power plug on the Pi, move it around and plug it back in and the whole thing would <strong>just work</strong>. This acheived my goals of making it easy to deploy.</p>
+<p>With these restraints, I designed a system where each Pi would host a Docker container that runs the whole system which is configured to boot on start and restart on fail. This way, there was no painful setup across different systems and system-dependent errors were less common in development, given the whole thing was containerised. After the Docker setup, you could just pull the power plug on the Pi, move it around and plug it back in and the whole thing would <strong>just work</strong>. This achieved my goals of making it easy to deploy.</p>
 <h3 id="scaling-with-ease" tabindex="-1">Scaling with ease <a class="heading-anchor" href="#scaling-with-ease" aria-hidden="true">§</a></h3>
 <p>Now what if I want node 1 in this part of the building, then node 3 over here and node 2 can just sit in my office?</p>
-<p>Well the visualisation and UI design of this was easy. Given each device has a <a href="https://github.com/mcloughlan/NetCheck/blob/3494e07d93f0e3dabec84038ad4d26f69902a494/templates/.env.template#L20">hard coded name in the config</a>, Grafana would have a dedicated section for the device you selected at the top (see <a href="#dashboard-screenshot">dashboard</a>). Then if you had multiple devices, they would just tile up next to each other in the upper summary section. Pushing to the database was also okay, because you have each device with a differnet name.</p>
+<p>Well the visualisation and UI design of this was easy. Given each device has a <a href="https://github.com/mcloughlan/NetCheck/blob/3494e07d93f0e3dabec84038ad4d26f69902a494/templates/.env.template#L20">hard coded name in the config</a>, Grafana would have a dedicated section for the device you selected at the top (see <a href="#dashboard-screenshot">dashboard</a>). Then if you had multiple devices, they would just tile up next to each other in the upper summary section. Pushing to the database was also okay, because you have each device with a different name.</p>
 <p>But the hard part was adhering to the <em>'one speedtest per hour per IP address'</em> rule by Ookla.<br>
 Given there was no obvious way to ask Ookla if the next test test would be limited (they probably rate limit with more rules than just 1 per hour), I decided I would just keep tabs on how many I've been running, and who's turn it is.</p>
 <p>So I needed to</p>
@@ -114,7 +114,7 @@ Given there was no obvious way to ask Ookla if the next test test would be limit
 <li>Run tests in a round robin way to equally query each device</li>
 </ol>
 <h4 id="speedtest-distributor%2Forchestrator-design" tabindex="-1">Speedtest distributor/orchestrator design <a class="heading-anchor" href="#speedtest-distributor%2Forchestrator-design" aria-hidden="true">§</a></h4>
-<p><em>Firstly, shoutout to my wonderful friend and career mentor James Baker who put me onto the orchestrator/driver model.</em></p>
+<p><em>Firstly, shout-out to my wonderful friend and career mentor James Baker who put me onto the orchestrator/driver model.</em></p>
 <br>
 <p>The approach I took was to use the Grafana database as a lazy orchestrator, where the clients would <a href="https://github.com/mcloughlan/netcheck-api/blob/041f639cbbe04b8c63e7f3628ff6ea344041fa20/src/web.py#L70-L148">just query it</a> and see who's been pushing data and when.</p>
 <p>Here's a basic sample of getting the number of devices online</p>
@@ -135,7 +135,7 @@ Given there was no obvious way to ask Ookla if the next test test would be limit
 <h2 id="conclusion" tabindex="-1">Conclusion <a class="heading-anchor" href="#conclusion" aria-hidden="true">§</a></h2>
 <p>This project taught me so much stuff</p>
 <ul>
-<li>Distributed computing (or at least distrubuted <em>computers</em>)</li>
+<li>Distributed computing (or at least distributed <em>computers</em>)</li>
 <li>Docker and containers</li>
 <li>Grafana
 <ul>
@@ -146,7 +146,7 @@ Given there was no obvious way to ask Ookla if the next test test would be limit
 <li>Remote access</li>
 <li>The security concerns of BSSIDs (lol)</li>
 <li>Documenting for others</li>
-<li>Desinging dynamic UI for alerts and error identification</li>
+<li>Designing dynamic UI for alerts and error identification</li>
 </ul>
 <p>Thanks to Ben Fon who got me onto making this project and bought some Pis for it.</p>
 
