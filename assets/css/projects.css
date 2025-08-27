@@ -1,0 +1,62 @@
+/* ------------------ Heading stuff ------------------ */
+
+h1.prefix {
+    color: var(--color-primary-text-faded-2);
+    margin-bottom: 0px;
+}
+
+.project-title h1 {
+    /* match hr */
+    display: inline;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    width: fit-content
+}
+
+.project-title {
+    margin-bottom: 0.3rem;
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+}
+
+.project-title a img {
+    height: 1.4rem;
+    cursor: pointer;
+    display: inline;
+}
+
+/* ------------------ Description stuff ------------------ */
+
+
+section.project-description {
+    margin-top: 1rem;
+    border-radius: 3px;
+    background-color: var(--color-primary-background-faded-2)
+}
+
+.project-description p {
+    color: var(--color-primary-text-faded-1);
+    font-style: italic;
+    padding-left: 1rem;
+}
+
+/* ------------------ Content stuff ------------------ */
+
+
+section.content img {
+    max-width: 100%;
+}
+
+section.content h1 {
+    display: inline-flex;
+    align-items: center;
+    /* vertically center children */
+    gap: 0.25em;
+    /* optional spacing between text and anchor */
+}
+
+a.heading-anchor {
+    opacity: 0.3;
+    font-size: 0.7em;
+}

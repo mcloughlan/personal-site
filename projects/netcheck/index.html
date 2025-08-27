@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        NetCheck
+    </title>
+    <meta name="description" content="A persistent network uptime and speed logging Grafana exporter intended for use on multiple Raspberry Pis">
+    <!-- Open Graph / social sharing -->
+    <meta property="og:title" content="NetCheck">
+    <meta property="og:description" content="A persistent network uptime and speed logging Grafana exporter intended for use on multiple Raspberry Pis">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/personal-site/projects/netcheck/">
+    
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NetCheck">
+    <meta name="twitter:description" content="A persistent network uptime and speed logging Grafana exporter intended for use on multiple Raspberry Pis">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/global-variables.css">
+    <link rel="stylesheet" href="/assets/css/holi-theme.css">
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+</head>
+    <link rel="stylesheet" href="/assets/css/projects.css">
+    <link rel="stylesheet" href="/assets/css/ascii-title.css">
+</head>
+
+<body>
+    <main>
+        <section class="header">
+            <div class="ascii-title">
+  <pre class="ascii-art large">
+                                 ,,        ,,                                                 
+`7MM"""YMM                     `7MM      `7MM                                                 
+  MM    `7                       MM        MM                                                 
+  MM   d `7Mb,od8 .gP"Ya    ,M""bMM   ,M""bMM `7M'   `MF'                                     
+  MM""MM   MM' "',M'   Yb ,AP    MM ,AP    MM   VA   ,V                                       
+  MM   Y   MM    8M"""""" 8MI    MM 8MI    MM    VA ,V                                        
+  MM       MM    YM.    , `Mb    MM `Mb    MM     VVV                                         
+.JMML.   .JMML.   `Mbmmd'  `Wbmd"MML.`Wbmd"MML.   ,V                                          
+                                                ,V                                           
+                                              OOb"                                            
+                                                                                              
+                        ,,                               ,,          ,,                       
+`7MMM.     ,MMF'      `7MM                             `7MM        `7MM                       
+  MMMb    dPMM          MM                               MM          MM                       
+  M YM   ,M MM  ,p6"bo  MM  ,pW"Wq.`7MM  `7MM  .P"Ybmmm  MMpMMMb.    MM   ,6"Yb.  `7MMpMMMb.  
+  M  Mb  M' MM 6M'  OO  MM 6W'   `Wb MM    MM :MI  I8    MM    MM    MM  8)   MM    MM    MM  
+  M  YM.P'  MM 8M       MM 8M     M8 MM    MM  WmmmP"    MM    MM    MM   ,pm9MM    MM    MM  
+  M  `YM'   MM YM.    , MM YA.   ,A9 MM    MM 8M         MM    MM    MM  8M   MM    MM    MM  
+.JML. `'  .JMML.YMbmd'.JMML.`Ybmd9'  `Mbod"YML.YMMMMMb .JMML  JMML..JMML.`Moo9^Yo..JMML  JMML.
+                                             6'     dP                                       
+                                             Ybmmmd'</pre>
+  <pre class="ascii-art small">
+                                 ,,  
+`7MM"""YMM                     `7MM 
+  MM    `7                       MM 
+  MM   d `7Mb,od8 .gP"Ya    ,M""bMM 
+  MM""MM   MM' "',M'   Yb ,AP    MM 
+  MM   Y   MM    8M"""""" 8MI    MM 
+  MM       MM    YM.    , `Mb    MM 
+.JMML.   .JMML.   `Mbmmd'  `Wbmd"MML</pre>
+</div>
+</div>
+        </section>
+        <section>
+            <h1 class="prefix" aria-hidden="true">Project</h1>
+            <span class="project-title">
+                <h1>
+                    NetCheck
+                </h1>
+                <a href="/index.html" class="home-link">
+                    <img src="/assets/images/icons/home.svg" alt="Home">
+                </a>
+            </span>
+            <hr>
+        </section>
+        <section class="project-description">
+            <p>A persistent network uptime and speed logging Grafana exporter intended for use on multiple Raspberry Pis</p>
+        </section>
+        <section class="content">
+            <h2 id="dashboard-screenshot" tabindex="-1">Dashboard screenshot <a class="heading-anchor" href="#dashboard-screenshot" aria-hidden="true">§</a></h2>
+<p><img src="https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/summary.png" alt="Screenshot of the NetCheck interface"></p>
+<p>From <a href="https://github.com/mcloughlan/NetCheck">https://github.com/mcloughlan/NetCheck</a></p>
+<h2 id="introduction" tabindex="-1">Introduction <a class="heading-anchor" href="#introduction" aria-hidden="true">§</a></h2>
+<p>I used to work at a residential college where the IT team had the occasional issue of APs dropping in and out. So we would go and sit next to it and check if it was working. Sometimes that was enough to tell it was broken and needed more investigation. However sometimes it needed to be monitored for hours at a time to find the problem.</p>
+<p>We didn't have access to any of the AP infrastructure, as this was managed by an external provider. But any time we wanted an issue solved with the network we needed to contact that provider with details of the issue. So we needed to both verify the issue ourselves, and build a case for the provider to look into.</p>
+<p>So there were no tools we could use to validate these issues, and no time to sit next to an AP and check it was playing up. That's where this project came into play. The idea was we could just leave a bunch of Raspberry Pis in locations that were possibly troublesome, and then wait for them to pickup an issue automatically.</p>
+<h2 id="design" tabindex="-1">Design <a class="heading-anchor" href="#design" aria-hidden="true">§</a></h2>
+<p><img src="https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/flowchart.svg" alt="netcheck design flowchart"></p>
+<p>This needed to be as simple and easy to deploy as possible. With the capabilities for seemless scaling with multiple deployed nodes. The design also needed to be <strong>completely free</strong> (excluding paying for a raspberry pi) by using the free configuration of Grafana Cloud and the Grafana dashboard. Note that Ookla speedtest (one of the metric gatherers for this) has a rate limit for your IP.</p>
+<h3 id="setup-%26-deployability" tabindex="-1">Setup &amp; deployability <a class="heading-anchor" href="#setup-%26-deployability" aria-hidden="true">§</a></h3>
+<p>With these restraints, I designed a system where each Pi would host a Docker container that runs the whole system which is configured to boot on start and restart on fail. This way, there was no painful setup across different systems and system-dependent errors were less common in development, given the whole thing was containerised. After the Docker setup, you could just pull the power plug on the Pi, move it around and plug it back in and the whole thing would <strong>just work</strong>. This acheived my goals of making it easy to deploy.</p>
+<h3 id="scaling-with-ease" tabindex="-1">Scaling with ease <a class="heading-anchor" href="#scaling-with-ease" aria-hidden="true">§</a></h3>
+<p>Now what if I want node 1 in this part of the building, then node 3 over here and node 2 can just sit in my office?</p>
+<p>Well the visualisation and UI design of this was easy. Given each device has a <a href="https://github.com/mcloughlan/NetCheck/blob/3494e07d93f0e3dabec84038ad4d26f69902a494/templates/.env.template#L20">hard coded name in the config</a>, Grafana would have a dedicated section for the device you selected at the top (see <a href="#dashboard-screenshot">dashboard</a>). Then if you had multiple devices, they would just tile up next to each other in the upper summary section. Pushing to the database was also okay, because you have each device with a differnet name.</p>
+<p>But the hard part was adhering to the <em>'one speedtest per hour per IP address'</em> rule by Ookla.<br>
+Given there was no obvious way to ask Ookla if the next test test would be limited (they probably rate limit with more rules than just 1 per hour), I decided I would just keep tabs on how many I've been running, and who's turn it is.</p>
+<p>So I needed to</p>
+<ol>
+<li>Keep track of when the last test was
+<ul>
+<li>This needed to be available on the cloud so it was available to all devices in the system. Because some devices could go offline when others want to check their position in the queue</li>
+</ul>
+</li>
+<li>Figure out if the device can run a test (&quot;<em>will this test cause a rate limit?</em>&quot;)</li>
+<li>Run tests in a round robin way to equally query each device</li>
+</ol>
+<h4 id="speedtest-distributor%2Forchestrator-design" tabindex="-1">Speedtest distributor/orchestrator design <a class="heading-anchor" href="#speedtest-distributor%2Forchestrator-design" aria-hidden="true">§</a></h4>
+<p><em>Firstly, shoutout to my wonderful friend and career mentor James Baker who put me onto the orchestrator/driver model.</em></p>
+<br>
+<p>The approach I took was to use the Grafana database as a lazy orchestrator, where the clients would <a href="https://github.com/mcloughlan/netcheck-api/blob/041f639cbbe04b8c63e7f3628ff6ea344041fa20/src/web.py#L70-L148">just query it</a> and see who's been pushing data and when.</p>
+<p>Here's a basic sample of getting the number of devices online</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">if</span> RESULT_JSON<span class="token punctuation">[</span><span class="token string">"status"</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">"success"</span><span class="token punctuation">:</span>
+    ORIGINS <span class="token operator">=</span> <span class="token punctuation">[</span>x<span class="token punctuation">[</span><span class="token string">"metric"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"origin_prometheus"</span><span class="token punctuation">]</span>
+                <span class="token keyword">for</span> x <span class="token keyword">in</span> RESULT_JSON<span class="token punctuation">[</span><span class="token string">"data"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"result"</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+    logging<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Devices found online: </span><span class="token interpolation"><span class="token punctuation">{</span>ORIGINS<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token comment"># If 0 devices are reported online, assume 1</span>
+    <span class="token keyword">return</span> <span class="token builtin">max</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>ORIGINS<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    logging<span class="token punctuation">.</span>error<span class="token punctuation">(</span>
+        <span class="token string-interpolation"><span class="token string">f"Valid HTTP JSON response collected, but API returned status: </span><span class="token interpolation"><span class="token punctuation">{</span>RESULT_JSON<span class="token punctuation">[</span><span class="token string">'status'</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token boolean">None</span></code></pre>
+<p>Then, based on when the number of devices online and the time the device joined the session, it would now know when to wait for the next test with the round robin effect.</p>
+<p><img src="https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/distributor.svg" alt="distributor design flowchart"></p>
+<p>This design relies on the fact that Ookla allows tests 'on demand' rather than following an exact and strict regiment of 'one per hour per IP'. It also assumes the user is setting up NetCheck on the one LAN with a single WAN IP shared between all clients. Otherwise each client would be limited more than they need to be.</p>
+<p>Also an hour <a href="https://github.com/mcloughlan/NetCheck/blob/3494e07d93f0e3dabec84038ad4d26f69902a494/docker-compose.yml#L14">wasn't hard coded</a> in the case someone had a <a href="https://github.com/mcloughlan/NetCheck/blob/3494e07d93f0e3dabec84038ad4d26f69902a494/docker-compose.yml#L16">private speedtest server</a> and could run a test every few minutes.</p>
+<h2 id="conclusion" tabindex="-1">Conclusion <a class="heading-anchor" href="#conclusion" aria-hidden="true">§</a></h2>
+<p>This project taught me so much stuff</p>
+<ul>
+<li>Distributed computing (or at least distrubuted <em>computers</em>)</li>
+<li>Docker and containers</li>
+<li>Grafana
+<ul>
+<li>And more stuff about databases</li>
+</ul>
+</li>
+<li>Logging</li>
+<li>Remote access</li>
+<li>The security concerns of BSSIDs (lol)</li>
+<li>Documenting for others</li>
+<li>Desinging dynamic UI for alerts and error identification</li>
+</ul>
+<p>Thanks to Ben Fon who got me onto making this project and bought some Pis for it.</p>
+
+        </section>
+    </main>
+
+    <footer>
+    <section>
+        <a href="/index.html">Home</a>
+        <p>&copy; 2025 Freddy Mcloughlan</p>
+        <p>Made with <a href="https://www.11ty.dev/docs/" class="soft">11ty</a></p>
+    </section>
+</footer>
+</body>
+
+</html>

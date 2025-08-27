@@ -1,0 +1,237 @@
+/* ------------ FONTS ------------*/
+
+@font-face {
+    font-family: "Europa Grotesk SH";
+    src: url('/assets/fonts/europa-grotesk-sh-bold.otf') format('opentype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto Regular";
+    src: url('/assets/fonts/Roboto-Regular.ttf') format('opentype');
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: "Cascadia";
+    src: url('/assets/fonts/Cascadia.ttf') format('opentype');
+    font-display: swap;
+}
+
+/* ------------ GLOBAL SETTINGS ------------*/
+
+body {
+    margin: 0;
+    color: var(--color-primary-text);
+    background-color: var(--color-primary-background);
+    font-family: "Roboto Regular";
+    padding: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Europa Grotesk SH", sans-serif, monospace;
+    /* Feel free to change to uppercase or something. Check cool variations*/
+    margin-top: 1.9rem;
+    margin-bottom: 0.5rem;
+    text-transform: none;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+
+a {
+    color: var(--color-accent-1)
+}
+
+hr {
+    margin-left: 0;
+    height: thin;
+    border: thin solid var(--color-accent-1);
+    width: 100%;
+}
+
+table {
+    border-spacing: 0;
+    background: var(--color-primary-background-faded-2);
+    border-radius: 10px;
+    width: fit-content;
+    margin: 1rem 0rem 1rem 0rem;
+}
+
+thead th {
+    /* Headers are slightly lighter than rest of table */
+    background: var(--color-primary-background-faded-3);
+    font-weight: 600;
+    text-align: left;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+tbody td {
+    padding: 0.8rem 1rem;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+tbody tr {
+    transition: background 0.3s ease;
+}
+
+tbody tr:hover,
+tbody tr:nth-child(even):hover {
+    background: var(--color-accent-1-minimal);
+}
+
+tbody td a {
+    transition: color 0.2s ease;
+}
+
+tbody td a:hover {
+    color: var(--color-primary-text);
+}
+
+/* Optional: striped rows */
+tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Rounded first and last cells in header and body */
+thead th:first-child {
+    border-top-left-radius: 10px;
+}
+
+thead th:last-child {
+    border-top-right-radius: 10px;
+}
+
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+
+blockquote {
+    position: relative;
+    padding: 1.8rem 1.5rem 1rem 1.5rem;
+    margin: 1.5rem 0;
+    background-color: var(--color-primary-background-faded-2);
+    font-style: italic;
+    line-height: 1.4rem;
+    border-radius: 8px;
+}
+
+blockquote::before {
+    content: "\"";
+    position: absolute;
+    top: 0.7rem;
+    left: 0.5rem;
+    font-size: 4rem;
+    color: var(--color-primary-text-faded-2);
+    line-height: 1;
+    pointer-events: none;
+}
+
+/* left accent bar */
+blockquote::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4px;
+    background-color: var(--color-accent-1);
+    border-radius: 8px 0 0 8px;
+}
+
+blockquote cite {
+    display: block;
+    font-size: 0.85rem;
+    color: #b0b0b0;
+    margin-top: 0.5rem;
+}
+
+
+/* ------------ SECTION CONTENT ------------*/
+
+main,
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Each section stacked vertically */
+section {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section.header {
+    margin-top: 2rem;
+}
+
+/* ------------ FOOTER CONTENT ------------*/
+
+
+/* Footer styling */
+footer {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+footer section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+footer a.soft {
+    color: var(--color-primary-text-faded-1);
+}
+
+footer section p:first-of-type {
+    margin: 1.3rem 0 0.3rem 0;
+}
+
+footer p {
+    color: var(--color-primary-text-faded-1);
+    margin: 0.3rem 0 0.3rem 0;
+}
