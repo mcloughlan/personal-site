@@ -21,7 +21,6 @@ h1.prefix {
 }
 
 .project-title a img {
-    height: 1.4rem;
     cursor: pointer;
     display: inline;
 }
@@ -46,6 +45,7 @@ section.project-description {
 
 section.content img {
     max-width: 100%;
+    height: auto;
 }
 
 section.content h1 {

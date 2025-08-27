@@ -36,7 +36,7 @@
     <main>
         <section class="header">
             <div class="ascii-title">
-  <pre class="ascii-art large">
+  <pre class="ascii-art large" aria-hidden=true>
                                  ,,        ,,                                                 
 `7MM"""YMM                     `7MM      `7MM                                                 
   MM    `7                       MM        MM                                                 
@@ -58,7 +58,7 @@
 .JML. `'  .JMML.YMbmd'.JMML.`Ybmd9'  `Mbod"YML.YMMMMMb .JMML  JMML..JMML.`Moo9^Yo..JMML  JMML.
                                              6'     dP                                       
                                              Ybmmmd'</pre>
-  <pre class="ascii-art small">
+  <pre class="ascii-art small" aria-hidden=true>
                                  ,,  
 `7MM"""YMM                     `7MM 
   MM    `7                       MM 
@@ -77,7 +77,7 @@
                     NetCheck
                 </h1>
                 <a href="/index.html" class="home-link">
-                    <img src="/assets/images/icons/home.svg" alt="Home">
+                    <img src="/assets/images/icons/home.svg" alt="Home" height="30px" width="30px">
                 </a>
             </span>
             <hr>
@@ -87,14 +87,14 @@
         </section>
         <section class="content">
             <h2 id="dashboard-screenshot" tabindex="-1">Dashboard screenshot <a class="heading-anchor" href="#dashboard-screenshot" aria-hidden="true">§</a></h2>
-<p><img src="https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/summary.png" alt="Screenshot of the NetCheck interface"></p>
+<p><img src="/projects/netcheck/images/summary.webp" alt="Screenshot of the NetCheck interface" width="800px" height="1256px" loading="lazy"></p>
 <p>From <a href="https://github.com/mcloughlan/NetCheck">https://github.com/mcloughlan/NetCheck</a></p>
 <h2 id="introduction" tabindex="-1">Introduction <a class="heading-anchor" href="#introduction" aria-hidden="true">§</a></h2>
 <p>I used to work at a residential college where the IT team had the occasional issue of APs dropping in and out. So we would go and sit next to it and check if it was working. Sometimes that was enough to tell it was broken and needed more investigation. However sometimes it needed to be monitored for hours at a time to find the problem.</p>
 <p>We didn't have access to any of the AP infrastructure, as this was managed by an external provider. But any time we wanted an issue solved with the network we needed to contact that provider with details of the issue. So we needed to both verify the issue ourselves, and build a case for the provider to look into.</p>
 <p>So there were no tools we could use to validate these issues, and no time to sit next to an AP and check it was playing up. That's where this project came into play. The idea was we could just leave a bunch of Raspberry Pis in locations that were possibly troublesome, and then wait for them to pickup an issue automatically.</p>
 <h2 id="design" tabindex="-1">Design <a class="heading-anchor" href="#design" aria-hidden="true">§</a></h2>
-<p><img src="https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/flowchart.svg" alt="Netcheck design flowchart"></p>
+<p><img src="https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/flowchart.svg" alt="Netcheck design flowchart" loading="lazy"></p>
 <p>This needed to be as simple and easy to deploy as possible. With the capabilities for seamless scaling with multiple deployed nodes. The design also needed to be <strong>completely free</strong> (excluding paying for a raspberry pi) by using the free configuration of Grafana Cloud and the Grafana dashboard. Note that Ookla speedtest (one of the metric gatherers for this) has a rate limit for your IP.</p>
 <h3 id="setup-%26-deployability" tabindex="-1">Setup &amp; deployability <a class="heading-anchor" href="#setup-%26-deployability" aria-hidden="true">§</a></h3>
 <p>With these restraints, I designed a system where each Pi would host a Docker container that runs the whole system which is configured to boot on start and restart on fail. This way, there was no painful setup across different systems and system-dependent errors were less common in development, given the whole thing was containerised. After the Docker setup, you could just pull the power plug on the Pi, move it around and plug it back in and the whole thing would <strong>just work</strong>. This achieved my goals of making it easy to deploy.</p>
@@ -129,7 +129,7 @@ Given there was no obvious way to ask Ookla if the next test test would be limit
         <span class="token string-interpolation"><span class="token string">f"Valid HTTP JSON response collected, but API returned status: </span><span class="token interpolation"><span class="token punctuation">{</span>RESULT_JSON<span class="token punctuation">[</span><span class="token string">'status'</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> <span class="token boolean">None</span></code></pre>
 <p>Then, based on when the number of devices online and the time the device joined the session, it would now know when to wait for the next test with the round robin effect.</p>
-<p><img src="https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/distributor.svg" alt="distributor design flowchart"></p>
+<p><img src="https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/distributor.svg" alt="distributor design flowchart" loading="lazy"></p>
 <p>This design relies on the fact that Ookla allows tests 'on demand' rather than following an exact and strict regiment of 'one per hour per IP'. It also assumes the user is setting up NetCheck on the one LAN with a single WAN IP shared between all clients. Otherwise each client would be limited more than they need to be.</p>
 <p>Also an hour <a href="https://github.com/mcloughlan/NetCheck/blob/3494e07d93f0e3dabec84038ad4d26f69902a494/docker-compose.yml#L14">wasn't hard coded</a> in the case someone had a <a href="https://github.com/mcloughlan/NetCheck/blob/3494e07d93f0e3dabec84038ad4d26f69902a494/docker-compose.yml#L16">private speedtest server</a> and could run a test every few minutes.</p>
 <h2 id="conclusion" tabindex="-1">Conclusion <a class="heading-anchor" href="#conclusion" aria-hidden="true">§</a></h2>
