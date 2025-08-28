@@ -102,6 +102,51 @@ tbody td {
     font-size: 0.9rem;
 }
 
+.project-year {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-primary-text-faded-1);
+    margin-top: 0.2rem;
+}
+
+table a.name-col::after {
+    content: attr(data-year);
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-primary-text-faded-1);
+    margin-top: 0.2rem;
+}
+
+table .tags-mobile {
+    /* Hide on regular, show on small media */
+    display: none;
+    margin-top: 0.2rem;
+}
+
+@media (max-width: 800px) {
+
+    div.name-and-year {
+        margin-left: 2px;
+    }
+
+    table .tags-col {
+        display: none;
+    }
+
+    table .tags-mobile {
+        display: inline-block;
+    }
+
+    .project-year {
+        margin-bottom: 0.4rem;
+    }
+}
+
+table .tag {
+    font-size: 0.7rem;
+}
+
+
 tbody tr {
     transition: background 0.3s ease;
 }
@@ -208,7 +253,7 @@ section.header {
 }
 
 
-#project-table span {
+#project-table span.tag {
     padding: 2px 5px;
     border-radius: 3px;
     background-color: var(--color-primary-background-faded-3);
@@ -217,18 +262,18 @@ section.header {
     margin: 0.1rem 0.1rem;
 }
 
-#project-table span.tag-hardware {
+#project-table span.tag.hardware {
     color: var(--color-primary-background);
     background-color: #d0851c;
     border-color: #bb610d;
 }
 
-#project-table span.tag-software {
+#project-table span.tag.software {
     background-color: #4463ff;
     border-color: #264d6a;
 }
 
-#project-table span.tag-flames {
+#project-table span.tag.flames {
     text-shadow:
         0 0 5px #000000,
         0 0 10px #000000,
@@ -241,7 +286,18 @@ section.header {
         url("/assets/images/fire.gif") center/cover no-repeat;
     background-position: bottom center;
     text-align: center;
-    border-color: #5e291a;
+    border-color: #282828;
+}
+
+#project-table span.tag.PCBs {
+    background-color: #027206;
+    border-color: #044700;
+}
+
+
+#project-table span.tag.firmware {
+    background-color: #228fbd;
+    border-color: #1aa08e;
 }
 
 /* ------------ FOOTER CONTENT ------------*/

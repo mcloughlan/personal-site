@@ -15,35 +15,54 @@
     <br>
 
     <span
-        style="opacity: 0.8; background-color: rgba(200, 142, 25, 0.262);padding: 1rem;border-radius: 10px;border: thin solid rgb(136, 88, 0);">
+        style="opacity: 1; background-color: rgba(200, 142, 25, 0.262);padding: 1rem;border-radius: 10px;border: thin solid rgb(136, 88, 0);">
         <strong>
             Just note that this will look empty for a while. This is all new and I'm in the process of writing it all
             up!
         </strong>
-        I have like 10 projects to put on here but I've just done 1 for initial setup
+        <br>
+        I have like 10 projects to put on here but I've just done 1 for initial setup. I will delete this when it is up
+        to date
     </span>
 
     <table id="project-table">
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Tags</th>
+                <th class="tags-col">Tags</th>
                 <th>Decription</th>
             </tr>
         </thead>
         <tbody>
-            {# TODO: add note here to add date and tags to projects #}
-            {%- for project in collections.project -%}
+            {% for project in collections.project | sort(attribute='data.year') %}
             <tr>
-                <td><a href="{{ project.url }}">{{ project.data.title }}</a></td>
-                <td class="tags">
-                    {# Project is an automatic tag #}
-                    {% for tag in project.data.tags | sort %}{% if tag != "project" %}<span class=tag-{{tag}}>{{ tag
-                        }}</span>{% endif %}{% endfor %}
+                <td class="name-col">
+                    <div class="name-and-year">
+                        <a href="{{ project.url }}">{{ project.data.title }}</a>
+                        <span class="project-year">{{ project.data.date_display }}</span>
+                    </div>
+
+                    {# duplicate tags for mobile only #}
+                    <div class="tags-mobile">
+                        {% for tag in project.data.tags | sort %}
+                        {% if tag != "project" %}
+                        <span class="tag {{tag}}">{{ tag }}</span>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
                 </td>
+
+                <td class="tags-col">
+                    {% for tag in project.data.tags | sort %}
+                    {% if tag != "project" %}
+                    <span class="tag {{tag}}">{{ tag }}</span>
+                    {% endif %}
+                    {% endfor %}
+                </td>
+
                 <td>{{ project.data.description }}</td>
             </tr>
-            {%- endfor -%}
+            {% endfor %}
         </tbody>
     </table>
 </section>

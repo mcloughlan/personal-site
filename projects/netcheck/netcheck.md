@@ -1,9 +1,10 @@
 ---
 title: NetCheck
 description: A persistent network uptime and speed logging Grafana exporter intended for use on multiple Raspberry Pis
+date_display: "2024"
+year-start: 2024
 tags: 
     - software
-    - hardware
 ---
 
 ## Dashboard screenshot
