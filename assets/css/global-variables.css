@@ -11,10 +11,11 @@
     --color-primary-background-faded-2: #1b1b1b;
     /* lighter than main, 1, 2 */
     --color-primary-background-faded-3: #292929;
+    --color-primary-background-faded-4: #323232;
 
+    --glitter: url("https://assets.codepen.io/13471/silver-glitter-background.png");
 
     /* Secondary/accent colors */
     --color-accent-1: #00e21a;
     --color-accent-1-minimal: #00cc1825;
-
 }

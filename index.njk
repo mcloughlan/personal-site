@@ -23,10 +23,11 @@
         I have like 10 projects to put on here but I've just done 1 for initial setup
     </span>
 
-    <table>
+    <table id="project-table">
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Tags</th>
                 <th>Decription</th>
             </tr>
         </thead>
@@ -35,6 +36,11 @@
             {%- for project in collections.project -%}
             <tr>
                 <td><a href="{{ project.url }}">{{ project.data.title }}</a></td>
+                <td class="tags">
+                    {# Project is an automatic tag #}
+                    {% for tag in project.data.tags | sort %}{% if tag != "project" %}<span class=tag-{{tag}}>{{ tag
+                        }}</span>{% endif %}{% endfor %}
+                </td>
                 <td>{{ project.data.description }}</td>
             </tr>
             {%- endfor -%}

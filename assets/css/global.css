@@ -207,6 +207,43 @@ section.header {
     margin-top: 2rem;
 }
 
+
+#project-table span {
+    padding: 2px 5px;
+    border-radius: 3px;
+    background-color: var(--color-primary-background-faded-3);
+    border: 2px solid var(--color-primary-background-faded-4);
+    display: inline-block;
+    margin: 0.1rem 0.1rem;
+}
+
+#project-table span.tag-hardware {
+    color: var(--color-primary-background);
+    background-color: #d0851c;
+    border-color: #bb610d;
+}
+
+#project-table span.tag-software {
+    background-color: #4463ff;
+    border-color: #264d6a;
+}
+
+#project-table span.tag-flames {
+    text-shadow:
+        0 0 5px #000000,
+        0 0 10px #000000,
+        0 0 10px #000000,
+        0 0 15px #000000,
+        0 0 15px #000000;
+    /* x-offset y-offset blur color */
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.35)),
+        url("/assets/images/fire.gif") center/cover no-repeat;
+    background-position: bottom center;
+    text-align: center;
+    border-color: #5e291a;
+}
+
 /* ------------ FOOTER CONTENT ------------*/
 
 
