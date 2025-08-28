@@ -9,7 +9,7 @@ tags:
     - flames
 ---
 
-# Inspiration
+## Inspiration
 
 Back when I had more time on my hands, I came across this awesome video
 
@@ -17,10 +17,10 @@ Back when I had more time on my hands, I came across this awesome video
 
 And I thought, that's sick. So did Dad.
 
-# The plan
+## The plan
 
 I was only 15 and had no idea what I was doing. Software and electronics wise I could figure it out, but I couldn't weld or do anything with gas. So, thank you Dad for doing all the welding and making sure we didn't explode 👍.
 
-But I knew where to start with the control. I had used an Arduino before, and I knew about solenoids. 
+But I knew where to start with the control. I had used an Arduino before, and I knew about solenoids.
 
-I decided I was going to have control over the flames with a Guitar Hero guitar, and then not long after that I figured the 4 block lanes from BeatSaber matched the 4 solenoid channels I wanted on the flamethrower. 
+I decided I was going to have control over the flames with a Guitar Hero guitar, and then not long after that I figured the 4 block lanes from BeatSaber matched the 4 solenoid channels I wanted on the flamethrower.
