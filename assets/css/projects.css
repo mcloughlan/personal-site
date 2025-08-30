@@ -35,10 +35,20 @@ section.project-description {
 }
 
 .project-description p {
-    color: var(--color-primary-text-faded-1);
+    color: var(--color-primary-text-faded-3);
     font-style: italic;
     padding-left: 1rem;
+    padding-right: 1rem;
 }
+
+.project-description p.year {
+    color: var(--color-primary-text-faded-1);
+    margin-top: 0px;
+    font-weight: bold;
+    font-style: normal;
+    padding-left: 1rem;
+}
+
 
 /* ------------------ Content stuff ------------------ */
 
@@ -59,4 +69,14 @@ section.content h1 {
 a.heading-anchor {
     opacity: 0.3;
     font-size: 0.7em;
+}
+
+div.yt-shorts-double {
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    div.yt-shorts-double iframe {
+        max-height: 400px;
+    }
 }

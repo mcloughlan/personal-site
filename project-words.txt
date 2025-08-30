@@ -1,6 +1,11 @@
 Netcheck
 Ookla
 BSSIDs
+BeatSaber
+inspo
+desmos
 
+stupidaustralianworkdsdontwork
+favourite
 visualisation
 containerised

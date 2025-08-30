@@ -6,6 +6,10 @@
             "name": "project-words",
             "path": "./project-words.txt",
             "addWords": true
+        },
+        {
+            "name": "en-au",
+            "path": "node_modules/@cspell/dict-en-au/cspell-ext.json"
         }
     ],
     "dictionaries": [
@@ -15,5 +19,11 @@
     "ignorePaths": [
         "node_modules",
         "/project-words.txt"
+    ],
+    "ignoreRegExpList": [
+        "<iframe[\\s\\S]*?</iframe>",
+        "/```[\\s\\S]*?```/g",
+        "\\$\\$[\\s\\S]*?\\$\\$",
+        "\\$[^\\$\\n]+\\$"
     ]
 }

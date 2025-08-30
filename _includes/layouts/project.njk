@@ -5,6 +5,7 @@
     {% include "../components/head.njk" %}
     <link rel="stylesheet" href="/assets/css/projects.css">
     <link rel="stylesheet" href="/assets/css/ascii-title.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 </head>
 
 <body>
@@ -25,7 +26,8 @@
             <hr>
         </section>
         <section class="project-description">
-            <p>{{ description }}</p>
+            <p>"{{ description }}"</p>
+            <p class="year">{{date_display}}</p>
         </section>
         <section class="content">
             {{ content | safe }}
