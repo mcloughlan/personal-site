@@ -80,3 +80,8 @@ div.yt-shorts-double {
         max-height: 400px;
     }
 }
+
+p.katex-block {
+    max-width: 100%;
+    overflow-x: auto;
+}
