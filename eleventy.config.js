@@ -3,6 +3,7 @@ import markdownItAttrs from "markdown-it-attrs";
 import markdownItAnchor from "markdown-it-anchor";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import sitemap from "@quasibit/eleventy-plugin-sitemap";
+import markdownItKatex from "@iktakahiro/markdown-it-katex";
 
 
 
@@ -14,15 +15,16 @@ export default function (eleventyConfig) {
         linkify: true
     };
 
-    let mdLib = markdownIt(options)
+    const mdLib = markdownIt(options)
         .use(markdownItAttrs)
         .use(markdownItAnchor, {
-            permalink: markdownItAnchor.permalink.ariaHidden({ // adds an <a> link
+            permalink: markdownItAnchor.permalink.ariaHidden({
                 placement: "after",
                 symbol: "§",
-                class: "heading-anchor"
-            })
-        });
+                class: "heading-anchor",
+            }),
+        })
+        .use(markdownItKatex);
 
     eleventyConfig.setLibrary("md", mdLib);
 
@@ -32,6 +34,8 @@ export default function (eleventyConfig) {
         },
     });
 
+    // Set current year
+    eleventyConfig.addFilter("year", () => new Date().getFullYear());
 
     // other config
     eleventyConfig.addPassthroughCopy("assets");
