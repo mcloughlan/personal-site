@@ -276,32 +276,22 @@ Obviously a song at 60 BPM is tame, and a song at 300 is bonkers. I set some bas
 
 I ended up asking my Math teachers (shout-out to Mr Y and Miss H) how I could connect the threshold values of `0`, `110`, `185` and `255` to intersect with the function. This alone taught me about function translation, scaling and piecewise notation.
 
-For the sake of showing how stupid this looks on paper, the final piecewise turned out to be:
+It looks cool (although it's over complicated) as a piecewise too
 
 $$
-f : \mathbb{R} \longrightarrow \mathbb{R}^3, \quad
+f : \mathbb{N} \longrightarrow \mathbb{R}^3, \quad
 x \mapsto
+(\textcolor{red}{r}, \textcolor{green}{g}, \textcolor{blue}{b})
 \begin{cases}
-\begin{bmatrix}
-    0 \\ 0 \\ 0
-\end{bmatrix}_{\substack{\text r \\ \text g \\ \text b}}, & x < 0 \\
+(0,0,0), & x < 0 \\[0.75em]
 
-\begin{bmatrix}
-    0 \\ \frac{255}{110} \cdot \frac{x^5}{146410000} \\ 0
-\end{bmatrix}, & 0 \le x < 110 \\
+\left(0, \dfrac{255}{110}\cdot\dfrac{x^5}{146410000}, 0\right), & 0 \le x < 110 \\[1em]
 
-\begin{bmatrix}
-    \frac{255}{75} \cdot \frac{(x-110)^3}{5625} \\ 255 \\ 0
-\end{bmatrix}, & 110 \le x < 185 \\
+\left(\dfrac{255}{75}\cdot\dfrac{(x-110)^3}{5625}, 255, 0\right), & 110 \le x < 185 \\[1em]
 
-\begin{bmatrix}
-    255 \\ 255 - \frac{255}{75} \cdot  \frac{(x-185)^3}{5635} \\ 0
-\end{bmatrix}, &  185 \le x < 260 \\
+\left(255, 255 - \dfrac{255}{75}\cdot\dfrac{(x-185)^3}{5635}, 0\right), & 185 \le x < 260 \\[1em]
 
-\begin{bmatrix}
-    255 \\ 0 \\ 0
-\end{bmatrix}, &  \text{otherwise}
-
+(255,0,0), & \text{otherwise}
 \end{cases}
 $$
 
