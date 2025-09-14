@@ -50,7 +50,7 @@
                 "color": "terminal.ansiBlue"
             },
             "type": "shell",
-            "command": "mkdir -p \"${workspaceFolder}/projects/${input:projectName}\" && cp \"${workspaceFolder}/template.md\" \"${workspaceFolder}/projects/${input:projectName}/${input:projectName}.md\" && echo 'Created project: ${input:projectName}'",
+            "command": "mkdir -p \"${workspaceFolder}/projects/${input:projectName}\" && cp \"${workspaceFolder}/template.md\" \"${workspaceFolder}/projects/${input:projectName}/${input:projectName}.md\" && mkdir -p \"${workspaceFolder}/projects/${input:projectName}/images\" && echo 'Created project: ${input:projectName}'",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
