@@ -41,6 +41,7 @@ export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("projects/**/images")
     eleventyConfig.addPassthroughCopy("CNAME");
+    eleventyConfig.addPassthroughCopy("r.html");
     eleventyConfig.addPassthroughCopy("robots.txt");
     eleventyConfig.addPlugin(syntaxHighlight);
 
