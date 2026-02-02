@@ -34,6 +34,10 @@ permalink: /r/index.html
             display: none;
         }
 
+        video.playing {
+            display: block;
+        }
+
         #overlay {
             position: fixed;
             top: 0;
@@ -65,9 +69,14 @@ permalink: /r/index.html
         const overlay = document.getElementById('overlay');
 
         overlay.addEventListener('click', () => {
-            video.style.display = 'block';
-            video.play();
-            overlay.style.display = 'none';
+            // Hide text
+            overlay.innerHTML = "";
+            // Wait time before showing video
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                video.classList.add('playing');
+                video.play();
+            }, 1200);
         });
     </script>
 </body>
