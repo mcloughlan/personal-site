@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!--This is the best piece of software I have ever made-->
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background: #000;
+            font-family: sans-serif;
+        }
+
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            cursor: pointer;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="overlay">
+        <h1>Continue</h1>
+    </div>
+
+    <video id="myVideo" playsinline loop>
+        <source src="/assets/video/video.mp4" type="video/mp4">
+    </video>
+
+    <script>
+        const video = document.getElementById('myVideo');
+        const overlay = document.getElementById('overlay');
+
+        overlay.addEventListener('click', () => {
+            video.style.display = 'block';
+            video.play();
+            overlay.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
