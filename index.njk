@@ -37,9 +37,9 @@
             {% for project in collections.project | sort(attribute='data.year') | reverse %}
             <tr>
                 <td class="name-col">
-                    <div class="name-and-year">
+                    <div class="title-subtitle">
                         <a href="{{ project.url }}">{{ project.data.title }}</a>
-                        <span class="project-year">{{ project.data.date_display }}</span>
+                        <span class="subtitle-year">{{ project.data.date_display }}</span>
                     </div>
 
                     {# duplicate tags for mobile only #}
@@ -66,7 +66,7 @@
         </tbody>
     </table>
 </section>
-<section id="Job History">
+<section id="job-history">
     <h2>Job History</h2>
 
     <div class="company-logos">
@@ -78,16 +78,31 @@
         {% endfor %}
     </div>
 
-    {% for job in job_history %}
-    <h3>{{ job.company }}</h3>
-    <p>{{ job.role }}</p>
-    <p>{{ job.year_start }} - {{ job.year_end }}</p>
-    <ul>
-        {% for highlight in job.highlights %}
-        <li>{{ highlight }}</li>
-        {% endfor %}
-    </ul>
-    {% endfor %}
+    <table id="job-history">
+        <thead>
+            <tr>
+                <th>Job</th>
+                <th>Highlights</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for job in job_history %}
+            <tr>
+                <td>
+                    <div class="title-subtitle">
+                        <p> {{ job.company }}</p>
+                        <span class="subtitle-year">{{ job.year_start }} - {{ job.year_end }}</span>
+                    </div>
+                </td>
+
+                <td>{% for highlight in job.highlights %}
+                    <li>{{ highlight }}</li>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </section>
 <section id="links">
     <h2>Links</h2>

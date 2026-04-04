@@ -45,6 +45,9 @@ div.logo {
     transform: translateY(3px);
 }
 
+#job-history h3 {
+    color: red;
+}
 
 
 #links ul {

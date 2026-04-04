@@ -102,7 +102,7 @@ tbody td {
     font-size: 0.9rem;
 }
 
-.project-year {
+.subtitle-year {
     display: block;
     font-size: 0.75rem;
     color: var(--color-primary-text-faded-1);
@@ -125,7 +125,7 @@ table .tags-mobile {
 
 @media (max-width: 800px) {
 
-    div.name-and-year {
+    td div.title-subtitle {
         margin-left: 2px;
     }
 
@@ -137,7 +137,7 @@ table .tags-mobile {
         display: inline-block;
     }
 
-    .project-year {
+    .subtitle-year {
         margin-bottom: 0.4rem;
     }
 }
@@ -253,7 +253,7 @@ section.header {
 }
 
 
-#project-table span.tag {
+table span.tag {
     padding: 2px 5px;
     border-radius: 3px;
     background-color: var(--color-primary-background-faded-3);
@@ -262,18 +262,18 @@ section.header {
     margin: 0.1rem 0.1rem;
 }
 
-#project-table span.tag.hardware {
+table span.tag.hardware {
     color: var(--color-primary-background);
     background-color: #d0851c;
     border-color: #bb610d;
 }
 
-#project-table span.tag.software {
+table span.tag.software {
     background-color: #4463ff;
     border-color: #264d6a;
 }
 
-#project-table span.tag.flames {
+table span.tag.flames {
     text-shadow:
         0 0 5px #000000,
         0 0 10px #000000,
@@ -289,13 +289,13 @@ section.header {
     border-color: #282828;
 }
 
-#project-table span.tag.PCBs {
+table span.tag.PCBs {
     background-color: #027206;
     border-color: #044700;
 }
 
 
-#project-table span.tag.firmware {
+table span.tag.firmware {
     background-color: #228fbd;
     border-color: #1aa08e;
 }
