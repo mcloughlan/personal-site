@@ -1,0 +1,9 @@
+{
+    "svg.preview.background": "dark-transparent",
+    "[json]": {
+        "editor.wordWrap": "on"
+    },
+    "[jsonc]": {
+        "editor.wordWrap": "on"
+    }
+}

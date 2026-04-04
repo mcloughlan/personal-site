@@ -1,3 +1,52 @@
+:root {
+    --company-logo-img-height: 42px;
+}
+
+div.company-logos {
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    min-height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    align-items: center;
+}
+
+@media (max-width: 700px) {
+    div.company-logos {
+        justify-content: space-evenly;
+        gap: 1rem 1rem;
+    }
+}
+
+div.logo {
+    display: flex;
+}
+
+.logo img {
+    height: var(--company-logo-img-height);
+    opacity: 0.3;
+}
+
+#queens-png {
+    height: calc(var(--company-logo-img-height) * 1.5);
+    opacity: 0.44;
+    transform: translateY(-4 px);
+}
+
+#ches-svg {
+    transform: translateY(-8px);
+}
+
+#rmit_university-svg {
+    transform: translateY(3px);
+}
+
+
+
 #links ul {
     list-style: none;
     padding-left: 1rem;

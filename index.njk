@@ -66,6 +66,29 @@
         </tbody>
     </table>
 </section>
+<section id="Job History">
+    <h2>Job History</h2>
+
+    <div class="company-logos">
+        {% for job in job_history | uniqueBy('logo') %}
+        <div class="logo">
+            <img src="assets/images/company_logos/{{ job.logo }}" alt="{{ job.company }}"
+                id="{{ job.logo | replace('.', '-') }}">
+        </div>
+        {% endfor %}
+    </div>
+
+    {% for job in job_history %}
+    <h3>{{ job.company }}</h3>
+    <p>{{ job.role }}</p>
+    <p>{{ job.year_start }} - {{ job.year_end }}</p>
+    <ul>
+        {% for highlight in job.highlights %}
+        <li>{{ highlight }}</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</section>
 <section id="links">
     <h2>Links</h2>
     <ul>

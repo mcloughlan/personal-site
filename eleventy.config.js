@@ -37,6 +37,18 @@ export default function (eleventyConfig) {
     // Set current year
     eleventyConfig.addFilter("year", () => new Date().getFullYear());
 
+    // First item per distinct value of `attr` (e.g. logo filename). Preserves order. */
+    eleventyConfig.addFilter("uniqueBy", (arr, attr) => {
+        if (!Array.isArray(arr)) return [];
+        const seen = new Set();
+        return arr.filter((item) => {
+            const key = item?.[attr];
+            if (key == null || seen.has(key)) return false;
+            seen.add(key);
+            return true;
+        });
+    });
+
     // other config
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("projects/**/images")

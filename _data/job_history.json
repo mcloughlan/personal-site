@@ -1,0 +1,99 @@
+[
+    {
+        "company": "Queen's College, The University of Melbourne",
+        "logo": "queens.png",
+        "role": "Tutor",
+        "year_start": "2026",
+        "year_end": "Present",
+        "highlights": [
+            "Tutoring: UoM - Foundations Of Computing & RMIT - Digital Fundamentals"
+        ]
+    },
+    {
+        "company": "RMIT High Velocity Rocketry",
+        "logo": "hive.svg",
+        "role": "IREC Team Lead",
+        "year_start": "2025",
+        "year_end": "Present",
+        "highlights": [
+            "Leading a cross-disciplinary team of 40+ student engineers building a student-researched and designed high-power sounding rocket for the International Rocket Engineering Competition (IREC) in Texas, USA (2026), from carbon fiber airframe to firmware on a custom flight computer.",
+            "Overseeing integration across subsystems, competition compliance, recruitment (150+ applicants), and sponsorships."
+        ]
+    },
+    {
+        "company": "RMIT High Velocity Rocketry",
+        "logo": "hive.svg",
+        "role": "Ground Control Software Lead",
+        "year_start": "2025",
+        "year_end": "2025",
+        "highlights": [
+            "Led technical integration between the GCS backend and frontend team, code reviews, client/developer meetings, and other GCS software work."
+        ]
+    },
+    {
+        "company": "RMIT High Velocity Rocketry",
+        "logo": "hive.svg",
+        "role": "Software Engineer",
+        "year_start": "2025",
+        "year_end": "2025",
+        "highlights": [
+            "Designed and built the HIVE Ground Station Control (GCS) backend for IREC, portable to future Australis-series rockets—included a custom HAL for radio systems, telemetry ingest, half-duplex LoRa networking, logging, device mocking, frontend API, and CLI-driven deployment (C++ / Python, service architecture).",
+            "GitHub: https://github.com/RMIT-Competition-Rocketry/GCS"
+        ]
+    },
+    {
+        "company": "Google",
+        "logo": "google.svg",
+        "role": "Associate Software Developer Intern",
+        "year_start": "2025",
+        "year_end": "2026",
+        "highlights": [
+            "Google Maps Core UGC team (Nov 2025 - Feb 2026 · Sydney, on-site).",
+            "On-device LLMs and native Android development in Kotlin."
+        ]
+    },
+    {
+        "company": "Centre for Higher Education Studies",
+        "logo": "ches.svg",
+        "role": "VCE Algorithmics Tutor",
+        "year_start": "2023",
+        "year_end": "2025",
+        "highlights": [
+            "Supported ~50 students in VCE Algorithmics (a derivation of Algorithms & Analysis) with one-to-one consults.",
+            "Facilitated breakout sessions and produced instructional lecture-style videos."
+        ]
+    },
+    {
+        "company": "FredTech",
+        "logo": "fredtech.svg",
+        "role": "Small Business Owner",
+        "year_start": "2022",
+        "year_end": "2025",
+        "highlights": [
+            "Custom LTE-enabled irrigation monitoring (embedded systems, LTE modem firmware in C++, PCBA/PCB design and documentation).",
+            "IT consulting for local businesses (suite setup, training, outsourcing custom software) and general IT help for the community."
+        ]
+    },
+    {
+        "company": "Queen's College, The University of Melbourne",
+        "logo": "queens.png",
+        "role": "IT Support Technician",
+        "year_start": "2023",
+        "year_end": "2024",
+        "highlights": [
+            "General tech support for ~300 residents and event IT infrastructure.",
+            "Network uptime, troubleshooting, and software development."
+        ]
+    },
+    {
+        "company": "RMIT University",
+        "logo": "rmit_university.svg",
+        "role": "Teaching Assistant",
+        "year_start": "2024",
+        "year_end": "2024",
+        "highlights": [
+            "Teaching assistant for OENG1206 Digital Fundamentals (Semester 1 2024).",
+            "MATLAB support for ~350 students during interactive lectures."
+        ]
+    }
+]
