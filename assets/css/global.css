@@ -45,12 +45,13 @@
     font-display: swap;
 }
 
-
-
 @font-face {
-    font-family: "Roboto Regular";
-    src: url('/assets/fonts/roboto-regular-webfont.woff2') format('woff2'),
-        url('/assets/fonts/roboto-regular-webfont.woff') format('woff2');
+    font-family: 'Inter';
+    src: url('/assets/fonts/Inter-Regular.woff2') format('woff2'),
+        url('/assets/fonts/Inter-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 
@@ -67,7 +68,7 @@ body {
     margin: 0;
     color: var(--color-primary-text);
     background-color: var(--color-primary-background);
-    font-family: "Roboto Regular";
+    font-family: "Inter";
     padding: 20px;
 }
 
@@ -79,7 +80,7 @@ h5,
 h6 {
     font-family: "Space Grotesk", sans-serif, monospace;
     /* Feel free to change to uppercase or something. Check cool variations*/
-    margin-top: 1.9rem;
+    margin-top: 1.1rem;
     margin-bottom: 0.5rem;
     text-transform: none;
 }
@@ -87,8 +88,6 @@ h6 {
 h1 {
     font-size: 2.5rem;
     font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: -0.05em;
 }
 
 h2 {
@@ -298,7 +297,7 @@ section {
 }
 
 section.header {
-    margin-top: 2rem;
+    margin: 2rem;
 }
 
 

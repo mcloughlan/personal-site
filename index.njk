@@ -88,7 +88,8 @@
                 {% for position in employer.positions %}
                 <div class="job-position">
                     <h4 class="job-position__title">{{ position.title }}</h4>
-                    <p class="job-position__dates"><span class="subtitle-year">{{ position.year_start }} – {{ position.year_end }}</span></p>
+                    <p class="job-position__dates"><span class="subtitle-year">{{ position.year_start }} – {{
+                            position.year_end }}</span></p>
                     <ul class="job-position__highlights">
                         {% for highlight in position.highlights %}
                         <li>{{ highlight }}</li>

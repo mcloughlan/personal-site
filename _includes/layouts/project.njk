@@ -14,15 +14,30 @@
             {% include "components/ascii-title.njk" %}
         </section>
         <section>
-            <h1 class="prefix" aria-hidden="true">Project</h1>
-            <span class="project-title">
-                <h1>
-                    {{ title }}
-                </h1>
+            <div class="project-header small">
                 <a href="/index.html" class="home-link">
                     <img src="/assets/images/icons/home.svg" alt="Home" height="30px" width="30px">
                 </a>
-            </span>
+                <h4 class="prefix small" aria-hidden="true">Project</h4>
+                <h1 class="project-title">
+                    {{ title }}
+                </h1>
+                <p class="header-note small">Reading time: xx:xx</p>
+            </div>
+            <div class="project-header large">
+                <div>
+                    <h4 class="prefix" aria-hidden="true">Project</h4>
+                    <h1 class="project-title">
+                        {{ title }}
+                    </h1>
+                </div>
+                <div class="header-extras">
+                    <a href="/index.html" class="home-link">
+                        <img src="/assets/images/icons/home.svg" alt="Home" height="30px" width="30px">
+                    </a>
+                    <p class="header-note">Reading time: xx:xx</p>
+                </div>
+            </div>
             <hr>
         </section>
         <section class="project-description">

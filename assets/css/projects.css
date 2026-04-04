@@ -1,28 +1,66 @@
 /* ------------------ Heading stuff ------------------ */
 
-h1.prefix {
-    color: var(--color-primary-text-faded-2);
+.prefix {
+    color: var(--color-primary-text-faded-1);
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.prefix.small {
+    margin-top: 0.8rem;
+}
+
+.project-header {
+    display: flex;
+    gap: 0 4rem;
+    justify-content: space-between;
     margin-bottom: 0px;
 }
 
-.project-title h1 {
-    /* match hr */
-    display: inline;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    width: fit-content
+.header-extras {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.header-note {
+    font-family: "Inter";
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 2rem;
+    text-align: right;
+    color: var(--color-primary-text-faded-1);
+}
+
+.header-note.small {
+    text-align: left;
 }
 
 .project-title {
-    margin-bottom: 0.3rem;
-    display: flex;
-    height: fit-content;
-    justify-content: space-between;
+    margin: 0;
+    text-transform: uppercase;
 }
 
-.project-title a img {
+.home-link img {
     cursor: pointer;
     display: inline;
+}
+
+.project-header.small {
+    display: none;
+}
+
+/* But when extras goes off screen, put it nicely underneath */
+@media (max-width: 700px) {
+    .project-header.small {
+        display: block;
+    }
+
+    .project-header.large {
+        display: none;
+    }
 }
 
 /* ------------------ Description stuff ------------------ */
