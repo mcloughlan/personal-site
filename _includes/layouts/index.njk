@@ -5,6 +5,9 @@
     {% include "../components/head.njk" %}
     <link rel="stylesheet" href="/assets/css/index.css">
     <link rel="stylesheet" href="/assets/css/ascii-title.css">
+    {% for project in collections.project | sort(attribute='data.year') | reverse %}
+    <link rel="prefetch" href="{{ project.url }}">
+    {% endfor %}
 </head>
 
 <body>
