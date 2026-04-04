@@ -69,7 +69,8 @@
 section.project-description {
     margin-top: 1rem;
     border-radius: 3px;
-    background-color: var(--color-primary-background-faded-2)
+    background-color: var(--color-primary-background-faded-2);
+    border: thin, solid, var(--color-primary-text-faded-2);
 }
 
 .project-description p {
