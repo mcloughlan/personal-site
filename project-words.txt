@@ -4,6 +4,12 @@ BSSIDs
 BeatSaber
 inspo
 desmos
+IREC
+CHES
+Algorithmics
+FredTech
+PCBA
+OENG
 
 stupidaustralianworkdsdontwork
 favourite
