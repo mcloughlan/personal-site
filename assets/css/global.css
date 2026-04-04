@@ -46,12 +46,28 @@
 }
 
 @font-face {
+    font-family: 'Fallback for Space Grotesk';
+    src: local("Arial");
+    ascent-override: 0.984;
+    descent-override: 0.292;
+    line-gap-override: 0;
+}
+
+@font-face {
     font-family: 'Inter';
     src: url('/assets/fonts/Inter-Regular.woff2') format('woff2'),
         url('/assets/fonts/Inter-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fallback for Inter';
+    src: local("Arial");
+    ascent-override: 0.96875;
+    descent-override: 0.2414772727;
+    line-gap-override: 0;
 }
 
 
@@ -68,7 +84,7 @@ body {
     margin: 0;
     color: var(--color-primary-text);
     background-color: var(--color-primary-background);
-    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-family: "Inter", "Fallback for Inter", Arial, Helvetica, sans-serif;
     padding: 20px;
 }
 
@@ -78,7 +94,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Space Grotesk", Arial, Helvetica, sans-serif;
+    font-family: "Space Grotesk", "Fallback for Space Grotesk", Arial, Helvetica, sans-serif;
     /* Feel free to change to uppercase or something. Check cool variations*/
     margin-top: 1.1rem;
     margin-bottom: 0.5rem;
