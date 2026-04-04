@@ -9,7 +9,8 @@
     "prepare": "husky",
     "lint:md": "markdownlint './projects/**/*.md'",
     "spell:md": "cspell './projects/**/*.md'",
-    "check:md": "npm run spell:md && npm run lint:md"
+    "spell:data": "cspell './_data/job_history.json'",
+    "check:md": "npm run spell:md && npm run spell:data && npm run lint:md"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
   },
   "devDependencies": {
     "@cspell/dict-en-au": "^1.1.5",
+    "cspell": "^9.3.2",
     "husky": "^9.1.7"
   }
 }
