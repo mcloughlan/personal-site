@@ -117,8 +117,9 @@ a {
 
 hr {
     margin-left: 0;
-    height: thin;
-    border: thin solid var(--color-accent-1);
+    border: none;
+    border-top: 1px solid var(--color-accent-1);
+    height: 0;
     width: 100%;
 }
 
