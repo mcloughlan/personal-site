@@ -1,15 +1,73 @@
 /* ------------ FONTS ------------*/
 
 @font-face {
-    font-family: "Europa Grotesk SH";
-    src: url('/assets/fonts/europa-grotesk-sh-bold-webfont.woff2') format('woff2'),
-        url('/assets/fonts/europa-grotesk-sh-bold-webfont.woff') format('woff');
+    font-family: 'Space Grotesk';
+    src: url('/assets/fonts/SpaceGrotesk-Bold.woff2') format('woff2'),
+        url('/assets/fonts/SpaceGrotesk-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: "Roboto Regular";
-    src: url('/assets/fonts/roboto-regular-webfont.woff2') format('woff2'),
-        url('/assets/fonts/roboto-regular-webfont.woff') format('woff2');
+    font-family: 'Space Grotesk';
+    src: url('/assets/fonts/SpaceGrotesk-Medium.woff2') format('woff2'),
+        url('/assets/fonts/SpaceGrotesk-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('/assets/fonts/SpaceGrotesk-Light.woff2') format('woff2'),
+        url('/assets/fonts/SpaceGrotesk-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('/assets/fonts/SpaceGrotesk-Regular.woff2') format('woff2'),
+        url('/assets/fonts/SpaceGrotesk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('/assets/fonts/SpaceGrotesk-SemiBold.woff2') format('woff2'),
+        url('/assets/fonts/SpaceGrotesk-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fallback for Space Grotesk';
+    src: local("Arial");
+    ascent-override: 0.984;
+    descent-override: 0.292;
+    line-gap-override: 0;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/assets/fonts/Inter-Regular.woff2') format('woff2'),
+        url('/assets/fonts/Inter-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fallback for Inter';
+    src: local("Arial");
+    ascent-override: 0.96875;
+    descent-override: 0.2414772727;
+    line-gap-override: 0;
 }
 
 
@@ -26,7 +84,7 @@ body {
     margin: 0;
     color: var(--color-primary-text);
     background-color: var(--color-primary-background);
-    font-family: "Roboto Regular";
+    font-family: "Inter", "Fallback for Inter", Arial, Helvetica, sans-serif;
     padding: 20px;
 }
 
@@ -36,15 +94,16 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Europa Grotesk SH", sans-serif, monospace;
+    font-family: "Space Grotesk", "Fallback for Space Grotesk", Arial, Helvetica, sans-serif;
     /* Feel free to change to uppercase or something. Check cool variations*/
-    margin-top: 1.9rem;
+    margin-top: 1.1rem;
     margin-bottom: 0.5rem;
     text-transform: none;
 }
 
 h1 {
     font-size: 2.5rem;
+    font-weight: 900;
 }
 
 h2 {
@@ -74,8 +133,9 @@ a {
 
 hr {
     margin-left: 0;
-    height: thin;
-    border: thin solid var(--color-accent-1);
+    border: none;
+    border-top: 1px solid var(--color-accent-1);
+    height: 0;
     width: 100%;
 }
 
@@ -94,6 +154,7 @@ thead th {
     text-align: left;
     padding: 1rem;
     font-size: 1rem;
+    border-bottom: 1px solid var(--color-primary-background-faded-4);
 }
 
 tbody td {
@@ -102,7 +163,7 @@ tbody td {
     font-size: 0.9rem;
 }
 
-.project-year {
+.subtitle-year {
     display: block;
     font-size: 0.75rem;
     color: var(--color-primary-text-faded-1);
@@ -125,7 +186,7 @@ table .tags-mobile {
 
 @media (max-width: 800px) {
 
-    div.name-and-year {
+    td div.title-subtitle {
         margin-left: 2px;
     }
 
@@ -137,7 +198,7 @@ table .tags-mobile {
         display: inline-block;
     }
 
-    .project-year {
+    .subtitle-year {
         margin-bottom: 0.4rem;
     }
 }
@@ -167,6 +228,10 @@ tbody td a:hover {
 /* Optional: striped rows */
 tbody tr:nth-child(even) {
     background: rgba(255, 255, 255, 0.02);
+}
+
+tbody tr+tr td {
+    border-top: 1px solid var(--color-primary-background-faded-4);
 }
 
 /* Rounded first and last cells in header and body */
@@ -249,11 +314,11 @@ section {
 }
 
 section.header {
-    margin-top: 2rem;
+    margin: 2rem;
 }
 
 
-#project-table span.tag {
+table span.tag {
     padding: 2px 5px;
     border-radius: 3px;
     background-color: var(--color-primary-background-faded-3);
@@ -262,18 +327,18 @@ section.header {
     margin: 0.1rem 0.1rem;
 }
 
-#project-table span.tag.hardware {
+table span.tag.hardware {
     color: var(--color-primary-background);
     background-color: #d0851c;
     border-color: #bb610d;
 }
 
-#project-table span.tag.software {
+table span.tag.software {
     background-color: #4463ff;
     border-color: #264d6a;
 }
 
-#project-table span.tag.flames {
+table span.tag.flames {
     text-shadow:
         0 0 5px #000000,
         0 0 10px #000000,
@@ -289,13 +354,13 @@ section.header {
     border-color: #282828;
 }
 
-#project-table span.tag.PCBs {
+table span.tag.PCBs {
     background-color: #027206;
     border-color: #044700;
 }
 
 
-#project-table span.tag.firmware {
+table span.tag.firmware {
     background-color: #228fbd;
     border-color: #1aa08e;
 }

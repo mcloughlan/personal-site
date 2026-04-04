@@ -1,3 +1,139 @@
+:root {
+    --company-logo-img-height: 42px;
+}
+
+h1,
+h2 {
+    text-transform: uppercase;
+}
+
+div.company-logos {
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    min-height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    align-items: center;
+}
+
+@media (max-width: 700px) {
+    div.company-logos {
+        justify-content: space-evenly;
+        gap: 1rem 1rem;
+    }
+}
+
+div.logo {
+    display: flex;
+}
+
+.logo img {
+    height: var(--company-logo-img-height);
+    opacity: 0.3;
+}
+
+#queens-png {
+    height: calc(var(--company-logo-img-height) * 1.5);
+    opacity: 0.44;
+    transform: translateY(-4px);
+}
+
+#ches-svg {
+    transform: translateY(-8px);
+}
+
+#rmit_university-svg {
+    transform: translateY(3px);
+}
+
+/* --- Job history timeline (LinkedIn-style grouped employers) --- */
+
+.job-history-section .job-timeline {
+    margin-top: 1.5rem;
+    margin-left: 0.5rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--color-primary-background-faded-4);
+}
+
+.job-employer {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.job-employer:last-child {
+    margin-bottom: 0;
+}
+
+.job-employer::before {
+    content: "";
+    position: absolute;
+    left: calc(-1.5rem - 6px);
+    top: 0.4rem;
+    width: 10px;
+    height: 10px;
+    box-sizing: border-box;
+    background: var(--color-primary-background);
+    border: 2px solid var(--color-accent-1);
+    border-radius: 50%;
+}
+
+.job-employer__header {
+    margin-bottom: 0.75rem;
+}
+
+.job-employer__name {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.35rem;
+}
+
+.job-employer__positions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.job-position {
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-primary-background-faded-4);
+}
+
+.job-employer__positions .job-position:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.job-position__title {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-primary-text);
+}
+
+.job-position__dates {
+    margin: 0 0 0.5rem 0;
+}
+
+.job-position__highlights {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: var(--color-primary-text);
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+.job-position__highlights li {
+    margin-bottom: 0.35rem;
+}
+
+.job-position__highlights li:last-child {
+    margin-bottom: 0;
+}
+
 #links ul {
     list-style: none;
     padding-left: 1rem;
