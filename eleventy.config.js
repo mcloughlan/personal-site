@@ -5,7 +5,14 @@ import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import sitemap from "@quasibit/eleventy-plugin-sitemap";
 import markdownItKatex from "@iktakahiro/markdown-it-katex";
 
-
+// Strip HTML and estimate reading time from rendered Markdown body 
+function readingTimeMinutes(html, wordsPerMinute = 200) {
+    if (!html || typeof html !== "string") return 1;
+    const text = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+    const words = text ? text.split(" ").filter(Boolean).length : 0;
+    if (words === 0) return 1;
+    return Math.max(1, Math.ceil(words / wordsPerMinute));
+}
 
 export default function (eleventyConfig) {
     // Configure markdown-it library with attrs
@@ -36,6 +43,8 @@ export default function (eleventyConfig) {
 
     // Set current year
     eleventyConfig.addFilter("year", () => new Date().getFullYear());
+
+    eleventyConfig.addFilter("readingTimeMinutes", (html) => readingTimeMinutes(html));
 
     // other config
     eleventyConfig.addPassthroughCopy("assets");

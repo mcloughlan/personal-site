@@ -22,7 +22,7 @@
                 <h1 class="project-title">
                     {{ title }}
                 </h1>
-                <p class="header-note small">Reading time: xx:xx</p>
+                <p class="header-note small">Reading time: {{ content | readingTimeMinutes }} min</p>
             </div>
             <div class="project-header large">
                 <div>
@@ -35,7 +35,7 @@
                     <a href="/index.html" class="home-link">
                         <img src="/assets/images/icons/home.svg" alt="Home" height="30px" width="30px">
                     </a>
-                    <p class="header-note">Reading time: xx:xx</p>
+                    <p class="header-note">Reading time: {{ content | readingTimeMinutes }} min</p>
                 </div>
             </div>
             <hr>
