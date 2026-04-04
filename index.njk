@@ -66,43 +66,40 @@
         </tbody>
     </table>
 </section>
-<section id="job-history">
-    <h2>Job History</h2>
+<section id="job-history-section" class="job-history-section" aria-labelledby="job-history-heading">
+    <h2 id="job-history-heading">Job History</h2>
 
     <div class="company-logos">
-        {% for job in job_history | uniqueBy('logo') %}
+        {% for employer in job_history %}
         <div class="logo">
-            <img src="assets/images/company_logos/{{ job.logo }}" alt="{{ job.company }}"
-                id="{{ job.logo | replace('.', '-') }}">
+            <img src="assets/images/company_logos/{{ employer.logo }}" alt="{{ employer.company }}"
+                id="{{ employer.logo | replace('.', '-') }}">
         </div>
         {% endfor %}
     </div>
 
-    <table id="job-history">
-        <thead>
-            <tr>
-                <th>Job</th>
-                <th>Highlights</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for job in job_history %}
-            <tr>
-                <td>
-                    <div class="title-subtitle">
-                        <p> {{ job.company }}</p>
-                        <span class="subtitle-year">{{ job.year_start }} - {{ job.year_end }}</span>
-                    </div>
-                </td>
-
-                <td>{% for highlight in job.highlights %}
-                    <li>{{ highlight }}</li>
-                    {% endfor %}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="job-timeline">
+        {% for employer in job_history %}
+        <article class="job-employer">
+            <header class="job-employer__header">
+                <h3 class="job-employer__name">{{ employer.company }}</h3>
+            </header>
+            <div class="job-employer__positions">
+                {% for position in employer.positions %}
+                <div class="job-position">
+                    <h4 class="job-position__title">{{ position.title }}</h4>
+                    <p class="job-position__dates"><span class="subtitle-year">{{ position.year_start }} – {{ position.year_end }}</span></p>
+                    <ul class="job-position__highlights">
+                        {% for highlight in position.highlights %}
+                        <li>{{ highlight }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </article>
+        {% endfor %}
+    </div>
 </section>
 <section id="links">
     <h2>Links</h2>
