@@ -5,6 +5,7 @@ date_display: "2024"
 year-start: 2024
 tags: 
     - software
+favourite: true
 ---
 
 ## Dashboard screenshot

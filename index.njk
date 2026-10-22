@@ -36,7 +36,12 @@
             <tr>
                 <td class="name-col">
                     <div class="title-subtitle">
-                        <a href="{{ project.url }}">{{ project.data.title }}</a>
+                        <span>
+                            <a href="{{ project.url }}">{{ project.data.title }}</a>
+                            {% if project.data.favourite %}
+                            <img src="assets/images/icons/star.svg" title="Favourite project" alt="Favourite project star" style="height: 0.6rem;">
+                            {% endif %}
+                        </span>
                         <span class="subtitle-year">{{ project.data.date_display }}</span>
                     </div>
 

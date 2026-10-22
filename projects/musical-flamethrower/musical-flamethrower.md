@@ -7,6 +7,7 @@ tags:
     - hardware
     - software
     - flames
+favourite: true
 ---
 
 ## Showcase
