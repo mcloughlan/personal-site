@@ -32,7 +32,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for project in collections.project | sort(attribute='data.year') | reverse %}
+            {% for project in collections.project | sort(attribute='data.year-start') | reverse %}
             <tr>
                 <td class="name-col">
                     <div class="title-subtitle">
