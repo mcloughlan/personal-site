@@ -15,10 +15,10 @@
                 "@11ty/eleventy",
                 "--serve"
             ],
-            "presentation": { // Open in new tab and do not focus
+            "presentation": {
                 "echo": true,
                 "reveal": "never",
-                "focus": false,
+                "focus": true,
                 "panel": "shared"
             },
             "isBackground": true,
