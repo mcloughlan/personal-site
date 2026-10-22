@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include "../components/head.njk" %}
+</head>
+
+<body>
+    <main>
+        <section>
+            <h1>{{ title }}</h1>
+            {{ content | safe }}
+        </section>
+    </main>
+    {% include "../components/footer.njk" %}
+</body>
+
+</html>
