@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        Arduino Unit Testing Software
+        
+    </title>
+    <meta name="description" content="An automated solution for running unit tests on hardware with PlatformIO with fake serial emulation for the DUT">
+    <!-- Open Graph / social sharing -->
+    <meta property="og:title" content="Arduino Unit Testing Software">
+    <meta property="og:description" content="An automated solution for running unit tests on hardware with PlatformIO with fake serial emulation for the DUT">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/personal-site/projects/arduino-unit-pio/">
+    
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arduino Unit Testing Software">
+    <meta name="twitter:description" content="An automated solution for running unit tests on hardware with PlatformIO with fake serial emulation for the DUT">
+    
+    <!-- Font preloads (woff2 URLs match @font-face in global.css) -->
+    <link rel="preload" href="/assets/fonts/SpaceGrotesk-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/SpaceGrotesk-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/SpaceGrotesk-Light.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/SpaceGrotesk-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/SpaceGrotesk-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/cascadia-webfont.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/global-variables.css">
+    <link rel="stylesheet" href="/assets/css/holi-theme.css">
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+</head>
+    <link rel="stylesheet" href="/assets/css/projects.css">
+    <link rel="stylesheet" href="/assets/css/ascii-title.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+
+<body>
+    <main>
+        <section class="header">
+            <div class="ascii-title">
+  <pre class="ascii-art large" aria-hidden=true>
+                                 ,,        ,,                                                 
+`7MM"""YMM                     `7MM      `7MM                                                 
+  MM    `7                       MM        MM                                                 
+  MM   d `7Mb,od8 .gP"Ya    ,M""bMM   ,M""bMM `7M'   `MF'                                     
+  MM""MM   MM' "',M'   Yb ,AP    MM ,AP    MM   VA   ,V                                       
+  MM   Y   MM    8M"""""" 8MI    MM 8MI    MM    VA ,V                                        
+  MM       MM    YM.    , `Mb    MM `Mb    MM     VVV                                         
+.JMML.   .JMML.   `Mbmmd'  `Wbmd"MML.`Wbmd"MML.   ,V                                          
+                                                ,V                                           
+                                              OOb"                                            
+                                                                                              
+                        ,,                               ,,          ,,                       
+`7MMM.     ,MMF'      `7MM                             `7MM        `7MM                       
+  MMMb    dPMM          MM                               MM          MM                       
+  M YM   ,M MM  ,p6"bo  MM  ,pW"Wq.`7MM  `7MM  .P"Ybmmm  MMpMMMb.    MM   ,6"Yb.  `7MMpMMMb.  
+  M  Mb  M' MM 6M'  OO  MM 6W'   `Wb MM    MM :MI  I8    MM    MM    MM  8)   MM    MM    MM  
+  M  YM.P'  MM 8M       MM 8M     M8 MM    MM  WmmmP"    MM    MM    MM   ,pm9MM    MM    MM  
+  M  `YM'   MM YM.    , MM YA.   ,A9 MM    MM 8M         MM    MM    MM  8M   MM    MM    MM  
+.JML. `'  .JMML.YMbmd'.JMML.`Ybmd9'  `Mbod"YML.YMMMMMb .JMML  JMML..JMML.`Moo9^Yo..JMML  JMML.
+                                             6'     dP                                       
+                                             Ybmmmd'</pre>
+  <pre class="ascii-art small" aria-hidden=true>
+                                 ,,  
+`7MM"""YMM                     `7MM 
+  MM    `7                       MM 
+  MM   d `7Mb,od8 .gP"Ya    ,M""bMM 
+  MM""MM   MM' "',M'   Yb ,AP    MM 
+  MM   Y   MM    8M"""""" 8MI    MM 
+  MM       MM    YM.    , `Mb    MM 
+.JMML.   .JMML.   `Mbmmd'  `Wbmd"MML</pre>
+</div>
+</div>
+        </section>
+        <section>
+            <div class="project-header small">
+                <a href="/index.html" class="home-link">
+                    <img src="/assets/images/icons/home.svg" alt="Home" height="30px" width="30px">
+                </a>
+                <h4 class="prefix small" aria-hidden="true">Project</h4>
+                <h1 class="project-title">
+                    Arduino Unit Testing Software
+                </h1>
+                <p class="header-note small">Reading time: 5 min</p>
+            </div>
+            <div class="project-header large">
+                <div>
+                    <h4 class="prefix" aria-hidden="true">Project</h4>
+                    <h1 class="project-title">
+                        Arduino Unit Testing Software
+                    </h1>
+                </div>
+                <div class="header-extras">
+                    <a href="/index.html" class="home-link">
+                        <img src="/assets/images/icons/home.svg" alt="Home" height="30px" width="30px">
+                    </a>
+                    <p class="header-note">Reading time: 5 min</p>
+                </div>
+            </div>
+            <hr>
+        </section>
+        <section class="project-description">
+            <p>"An automated solution for running unit tests on hardware with PlatformIO with fake serial emulation for the DUT"</p>
+            <p class="year">2024</p>
+        </section>
+        <section class="content">
+            <h2 id="introduction" tabindex="-1">Introduction <a class="heading-anchor" href="#introduction" aria-hidden="true">§</a></h2>
+<p>Imagine you needed to run firmware unit tests with the actual device in the loop, but nothing <em>quite</em> does it the way you want. This is where you decide to <a href="https://xkcd.com/1319/">make a 1-click automatic HIL unit testing software rig!</a>.</p>
+<p>I know for a fact there are existing solutions for problems similar to this, but none of them supported mock serial streams to emulate another device in the loop, nor did anything work on PlatformIO in an automatic way.</p>
+<p>What I needed was a solution that:</p>
+<ol>
+<li>Worked with PlatformIO</li>
+<li>Compiled and deployed code to the board automatically</li>
+<li>Ran test code with support for mock serial streams to emulate another device (I had an LTE modem connected with AT commands)</li>
+<li>Allowed for serial capture from a serial analyser (Saleae in this case)</li>
+<li>Run a bunch of tests sequentially, one after another</li>
+<li>Displayed the results in a PlatformIO-compliant way</li>
+<li>Catch all the bugs!</li>
+</ol>
+<div style="display: flex; align-items: flex-start; gap: 1rem; width: 100%;">
+  <img alt="flow chart of project" src="/projects/arduino-unit-pio/images/flow.png" style="width: calc(60% - 0.5rem)">
+  <img alt="hardware in project" src="/projects/arduino-unit-pio/images/setup.png" style="width: calc(40% - 0.5rem)">
+</div>
+<p>This is all hosted on <a href="https://github.com/mcloughlan/ArduinoUnitPlatformIO">Github!</a></p>
+<h2 id="implementation" tabindex="-1">Implementation <a class="heading-anchor" href="#implementation" aria-hidden="true">§</a></h2>
+<p>Turns out, PlatformIO has it's own <a href="https://docs.platformio.org/en/latest/advanced/unit-testing/frameworks/custom/runner.html">test runner framework</a> which makes the deployment and output capture easy. AND, Saleae has an API for it's logic analysers.</p>
+<p>Perfect.</p>
+<p>I used both of these to build a python runner to startup the logic analyser software, wait for the output to read in, then parse it and return it back to PlatformIO.</p>
+<p>Simply:</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">create_all_test_cases</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>TestCase<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        test_cases <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token comment"># Get lines of serial output</span>
+        timestamped_lines <span class="token operator">=</span> self<span class="token punctuation">.</span>get_timestamped_lines<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">for</span> index<span class="token punctuation">,</span> line <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>timestamped_lines<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> re_match <span class="token operator">:=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span>TestParser<span class="token punctuation">.</span>TEST_REGEX<span class="token punctuation">,</span> line<span class="token punctuation">[</span><span class="token string">"line"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                test_cases<span class="token punctuation">.</span>append<span class="token punctuation">(</span>self<span class="token punctuation">.</span>_generate_test_case<span class="token punctuation">(</span>
+                    timestamped_lines<span class="token punctuation">,</span> re_match<span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">)</span> 
+
+        <span class="token keyword">return</span> test_cases</code></pre>
+<p>Here is an example test where the characters &quot;10&quot; are injected into the fake serial stream (Like an LTE modem talking over serial) and then checked in the serial stream output.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">square</span><span class="token punctuation">(</span>Stream <span class="token operator">&amp;</span>io<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  io<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"value? "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">int</span> x <span class="token operator">=</span> io<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  io<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  io<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  io<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  io<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  io<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x <span class="token operator">*</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">test</span><span class="token punctuation">(</span>exampleTest2<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  MockStream ms<span class="token punctuation">;</span>
+  ms<span class="token punctuation">.</span>input<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">square</span><span class="token punctuation">(</span>ms<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  Serial<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"MOCK_OUTPUT: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  Serial<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>ms<span class="token punctuation">.</span>output<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">assertEqual</span><span class="token punctuation">(</span>ms<span class="token punctuation">.</span>output<span class="token punctuation">,</span> <span class="token string">"value? 10*10=100\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>These C++ tests are compiled and flashed to the board over JTAG, and then read by the logic analyser</p>
+<p><em>I could not find test output for the mock stream. I am writing this 2 years after finishing the project</em></p>
+<pre class="language-text"><code class="language-text"># Example: timestamped_lines
+
+# {'duration': 0.858, 'line': 'TestRunner started on 2 test(s).'},
+# {'duration': 0.002, 'line': 'Test exampleTest1 passed.'},
+# {'duration': 0.004, 'line': 'AUnitPlatformIO.ino:12: Assertion failed: (3) != (3).'},
+# {'duration': 0.002, 'line': 'Test exampleTest2 failed.'},
+# {'duration': 0.003, 'line': 'TestRunner duration: 0.010 seconds.'},
+# {'duration': 0.007,
+# 'line': 'TestRunner summary: 1 passed, 1 failed, 0 skipped, 0 timed out, out '
+#         'of 2 test(s).'}
+
+# Example: timestamped_lines in text form only
+
+# TestRunner started on 2 test(s).
+# Test exampleTest1 passed.
+# AUnitPlatformIO.ino:12: Assertion failed: (3) != (3).
+# Test exampleTest2 failed.
+# TestRunner duration: 0.010 seconds.
+# TestRunner summary: 1 passed, 1 failed, 0 skipped, 0 timed out, out</code></pre>
+<p>Then all of this data is presented nicely in PlatformIO's test output window</p>
+<p><em>pretend this is the output of this program - once again I do not have enough screenshots</em></p>
+<p><img src="/projects/arduino-unit-pio/images/pio-output.png" alt="pio test output"></p>
+<p>source <a href="https://piolabs.com/blog/insights/unit-testing-part-2.html">PlatformIO</a></p>
+<ul>
+<li>Because it's flashed over JTAG, the ESP32's main serial line over USB is free. That could be used as the main test output stream if ever needed.</li>
+<li>Another bonus of this, is that I routed my GPIO outputs (lights, relays, etc) to the serial analyser, so I can add tests for my GPIO pins to be at certain levels and capture that as well.</li>
+<li>Because I opted for a CSV intermediary from the logic analyser, the entire test report is stored and timestamped byte for byte if I needed to analyse it later.</li>
+</ul>
+<h2 id="conclusion" tabindex="-1">Conclusion <a class="heading-anchor" href="#conclusion" aria-hidden="true">§</a></h2>
+<p>I wish I had more screenshots.</p>
+<p>But nevertheless, I was so pleased to be able to make a testing rig that I could test the entire hardware stack of my project with nothing more than the DUT, programmer board and a logic analyser. Small enough that I could do it on the bus if I needed to.<br>
+I needed to test that my device could talk to an LTE modem over serial with AT commands, and this system completely automated it. It was a big step up for me in terms of repeatability and reliability for the testing.</p>
+
+        </section>
+    </main>
+
+    <footer>
+    <section>
+        <a href="/index.html">Home</a>
+        <p>&copy; 2026 Freddy Mcloughlan</p>
+        <p>Made with <a href="https://www.11ty.dev/docs/" class="soft">11ty</a></p>
+        <a href="/licences.html" class="soft">Licences</a>
+    </section>
+</footer>
+</body>
+
+</html>

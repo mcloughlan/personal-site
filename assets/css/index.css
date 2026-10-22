@@ -38,7 +38,6 @@ div.logo {
 
 #queens-png {
     height: calc(var(--company-logo-img-height) * 1.5);
-    opacity: 0.44;
     transform: translateY(-4px);
 }
 
