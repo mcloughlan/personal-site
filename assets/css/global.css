@@ -354,7 +354,7 @@ table span.tag.flames {
     border-color: #282828;
 }
 
-table span.tag.PCBs {
+table span.tag.PCB {
     background-color: #027206;
     border-color: #044700;
 }
@@ -362,7 +362,7 @@ table span.tag.PCBs {
 
 table span.tag.firmware {
     background-color: #228fbd;
-    border-color: #1aa08e;
+    border-color: #166180;
 }
 
 /* ------------ FOOTER CONTENT ------------*/

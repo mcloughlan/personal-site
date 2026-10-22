@@ -4,7 +4,9 @@ description: An automated solution for running unit tests on hardware with Platf
 date_display: "2024"
 year-start: 2024
 tags:
-    - hardware
+    - firmware
+    - software
+    - PCB
 ---
 
 ## Introduction
