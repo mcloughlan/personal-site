@@ -10,8 +10,13 @@ Algorithmics
 FredTech
 PCBA
 OENG
+Saleae
+JTAG
 
 stupidaustralianworkdsdontwork
 favourite
 visualisation
+analyse
+analyser
+analysers
 containerised
