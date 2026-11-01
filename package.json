@@ -26,17 +26,17 @@
   "description": "",
   "type": "module",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy": "^3.1.7",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
-    "@iktakahiro/markdown-it-katex": "^3.1.0",
+    "@iktakahiro/markdown-it-katex": "^4.0.1",
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
-    "katex": "^0.16.22",
-    "markdown-it-anchor": "^9.2.0",
-    "markdown-it-attrs": "^4.3.1"
+    "katex": "^0.19.1",
+    "markdown-it-anchor": "^10.0.0",
+    "markdown-it-attrs": "^5.0.1"
   },
   "devDependencies": {
-    "@cspell/dict-en-au": "^1.1.5",
-    "cspell": "^9.3.2",
+    "@cspell/dict-en-au": "^1.1.31",
+    "cspell": "^10.4.0",
     "husky": "^9.1.7"
   }
 }
