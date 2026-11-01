@@ -1,20 +1,17 @@
 {
     "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
     "version": "0.2",
+    "import": ["@cspell/dict-en-au/cspell-ext.json"],
+    "language": "en-AU",
     "dictionaryDefinitions": [
         {
             "name": "project-words",
             "path": "./project-words.txt",
             "addWords": true
-        },
-        {
-            "name": "en-au",
-            "path": "node_modules/@cspell/dict-en-au/cspell-ext.json"
         }
     ],
     "dictionaries": [
-        "project-words",
-        "en-au"
+        "project-words"
     ],
     "ignorePaths": [
         "node_modules",

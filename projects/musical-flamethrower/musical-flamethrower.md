@@ -265,11 +265,11 @@ time_hold.append(i)
 
 The codebase obviously wasn't perfect, but in the end it did everything I wanted it to do with no issues.
 
-### BPM RGB coloring
+### BPM RGB colouring
 
 At the time of this project I was obsessed with ansi colors in the terminal (I still think they're cool). I decided that I wanted to color the BPM of the song to represent it's pace.
 
-![numbers 1 to 300 colored white to green to red](/projects/musical-flamethrower/images/BPM-colored-text.png)
+![numbers 1 to 300 coloured white to green to red](/projects/musical-flamethrower/images/BPM-colored-text.png)
 
 Obviously a song at 60 BPM is tame, and a song at 300 is bonkers. I set some basic thresholds for color ranges and began playing with the Google color picker. From there, I made a [Desmos](https://www.desmos.com/calculator/o2gcqlowq6) with some outrageous ramps to pick individual Red, Green and Blue values based on the BPM (x axis).
 
