@@ -122,8 +122,8 @@
 <p><img src="/projects/wordle-solver/images/wreck-game.png" alt="Game of Wordle with solver"></p>
 <p>This project is on <a href="https://github.com/mcloughlan/Wordle-Solver">GitHub</a></p>
 <h2 id="algorithm" tabindex="-1">Algorithm <a class="heading-anchor" href="#algorithm" aria-hidden="true">§</a></h2>
-<p>The design was based on the simple intuituion of a regular player. Think of all the words that the answer could possibly be based on the letters remaining in the keyboard, and pick words that match the yellows and greens you have revealed on the board.</p>
-<p>The algorithm implimented this almost exactly. As you play it would score each possible answer from a list of <code>12947</code> words giving high scores to multiple matches of green or yellow and an additional point boost if the word was 'popular' and doesn't have duplicate letters.</p>
+<p>The design was based on the simple intuition of a regular player. Think of all the words that the answer could possibly be based on the letters remaining in the keyboard, and pick words that match the yellows and greens you have revealed on the board.</p>
+<p>The algorithm implemented this almost exactly. As you play it would score each possible answer from a list of <code>12947</code> words giving high scores to multiple matches of green or yellow and an additional point boost if the word was 'popular' and doesn't have duplicate letters.</p>
 <pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_score</span><span class="token punctuation">(</span>word<span class="token punctuation">,</span> assumptions<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">list</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">"""
     Score the word based on:
@@ -158,17 +158,17 @@
         <span class="token comment"># Word is commonly used</span>
         score <span class="token operator">+=</span> <span class="token number">0.5</span>
     <span class="token keyword">return</span> <span class="token punctuation">[</span>word<span class="token punctuation">,</span> score<span class="token punctuation">]</span></code></pre>
-<p>The solver would then rank each valid answer for you to attempt in order of decending score with the top 5 most optimal responses available for the user to select.</p>
+<p>The solver would then rank each valid answer for you to attempt in order of descending score with the top 5 most optimal responses available for the user to select.</p>
 <h3 id="picking-an-optimal-starting-word" tabindex="-1">Picking An Optimal Starting Word <a class="heading-anchor" href="#picking-an-optimal-starting-word" aria-hidden="true">§</a></h3>
 <p>Everyone has a different starting word they like. But what is the best starting word? Well back when I made this, I figured <code>toeas</code> had the most potential.</p>
 <p>I ran a basic test where I iterated over every single valid Wordle word as the first guess in a Wordle game and the algorithm would assign it a fake match of <code>yggy-</code> and then rank the next word choice based on how many words it would invalidate. The test settled on <code>toeas</code> as it removed the most words. The example in <a href="#introduction">the introduction</a> removed 98.66% of possible answers.</p>
-<p>As I am writing this in 2026, I figured that that method was horrible and there was a simple way to redo this test much more effectively. So a second test was run where each input word was matched against <strong>every</strong> possible answer with the algorithm picking the highest scoring response each time. I.e. play every single game possible. Then I found that this whole alorithm sucked a lot and that the most optimal starting word was actually <code>clipt</code> with a win rate of 89.86%. However, <code>toeas</code> still remained the most potent starting word based on percentage of possible answers removed (91.3% versus 84.7% for <code>pints</code>). So if you strictly play by the algorithm, <code>clipt</code> is optimal. But if you deviate a bit, <code>toeas</code> might still be the best start.</p>
+<p>As I am writing this in 2026, I figured that that method was horrible and there was a simple way to redo this test much more effectively. So a second test was run where each input word was matched against <strong>every</strong> possible answer with the algorithm picking the highest scoring response each time. I.e. play every single game possible. Then I found that this whole algorithm sucked a lot and that the most optimal starting word was actually <code>clipt</code> with a win rate of 89.86%. However, <code>toeas</code> still remained the most potent starting word based on percentage of possible answers removed (91.3% versus 84.7% for <code>pints</code>). So if you strictly play by the algorithm, <code>clipt</code> is optimal. But if you deviate a bit, <code>toeas</code> might still be the best start.</p>
 <h3 id="limitations" tabindex="-1">Limitations <a class="heading-anchor" href="#limitations" aria-hidden="true">§</a></h3>
 <p>The scope of this project as small, and I identified a lot of limitations and room for improvement.</p>
 <ul>
-<li>Relvance of letters in guess
+<li>Relevance of letters in guess
 <ul>
-<li>Guesses gives you suggestions with rare letters like x &amp; y, rather than priorising vowels and common letters
+<li>Guesses gives you suggestions with rare letters like x &amp; y, rather than prioritising vowels and common letters
 <ul>
 <li>This is why you pick from 'top 5'</li>
 </ul>
@@ -183,13 +183,13 @@
 </li>
 <li>Optimisations
 <ul>
-<li>This is mostly brute force. A more efficient method may be beneficial such as a probabilsitc model to prioritise the testing of more optimal letters.</li>
+<li>This is mostly brute force. A more efficient method may be beneficial such as a probabilistic model to prioritise the testing of more optimal letters.</li>
 </ul>
 </li>
-<li>Doesn't explicity rule out the definite spots of yellow letters when you have ruled out the spots it's not in - See <a href="https://github.com/Sandwich1699975/Wordle-Solver/issues/1">#1</a></li>
+<li>Doesn't explicitly rule out the definite spots of yellow letters when you have ruled out the spots it's not in - See <a href="https://github.com/Sandwich1699975/Wordle-Solver/issues/1">#1</a></li>
 </ul>
 <h2 id="conclusion" tabindex="-1">Conclusion <a class="heading-anchor" href="#conclusion" aria-hidden="true">§</a></h2>
-<p>Overall I recall this being a fun project. It was a good way to disect a problem with my developing algorithmic mentality and find the true benefit in optimisation techniques.</p>
+<p>Overall I recall this being a fun project. It was a good way to dissect a problem with my developing algorithmic mentality and find the true benefit in optimisation techniques.</p>
 
         </section>
     </main>
