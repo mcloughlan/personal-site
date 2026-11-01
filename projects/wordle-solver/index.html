@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        Wordle Solver
+        
+    </title>
+    <meta name="description" content="An algorithmic brute force solver for Wordle">
+    <!-- Open Graph / social sharing -->
+    <meta property="og:title" content="Wordle Solver">
+    <meta property="og:description" content="An algorithmic brute force solver for Wordle">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/personal-site/projects/wordle-solver/">
+    
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wordle Solver">
+    <meta name="twitter:description" content="An algorithmic brute force solver for Wordle">
+    
+    <!-- Font preloads (woff2 URLs match @font-face in global.css) -->
+    <link rel="preload" href="/assets/fonts/SpaceGrotesk-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/SpaceGrotesk-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/SpaceGrotesk-Light.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/SpaceGrotesk-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/SpaceGrotesk-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/cascadia-webfont.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/global-variables.css">
+    <link rel="stylesheet" href="/assets/css/holi-theme.css">
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+</head>
+    <link rel="stylesheet" href="/assets/css/projects.css">
+    <link rel="stylesheet" href="/assets/css/ascii-title.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+
+<body>
+    <main>
+        <section class="header">
+            <div class="ascii-title">
+  <pre class="ascii-art large" aria-hidden=true>
+                                 ,,        ,,                                                 
+`7MM"""YMM                     `7MM      `7MM                                                 
+  MM    `7                       MM        MM                                                 
+  MM   d `7Mb,od8 .gP"Ya    ,M""bMM   ,M""bMM `7M'   `MF'                                     
+  MM""MM   MM' "',M'   Yb ,AP    MM ,AP    MM   VA   ,V                                       
+  MM   Y   MM    8M"""""" 8MI    MM 8MI    MM    VA ,V                                        
+  MM       MM    YM.    , `Mb    MM `Mb    MM     VVV                                         
+.JMML.   .JMML.   `Mbmmd'  `Wbmd"MML.`Wbmd"MML.   ,V                                          
+                                                ,V                                           
+                                              OOb"                                            
+                                                                                              
+                        ,,                               ,,          ,,                       
+`7MMM.     ,MMF'      `7MM                             `7MM        `7MM                       
+  MMMb    dPMM          MM                               MM          MM                       
+  M YM   ,M MM  ,p6"bo  MM  ,pW"Wq.`7MM  `7MM  .P"Ybmmm  MMpMMMb.    MM   ,6"Yb.  `7MMpMMMb.  
+  M  Mb  M' MM 6M'  OO  MM 6W'   `Wb MM    MM :MI  I8    MM    MM    MM  8)   MM    MM    MM  
+  M  YM.P'  MM 8M       MM 8M     M8 MM    MM  WmmmP"    MM    MM    MM   ,pm9MM    MM    MM  
+  M  `YM'   MM YM.    , MM YA.   ,A9 MM    MM 8M         MM    MM    MM  8M   MM    MM    MM  
+.JML. `'  .JMML.YMbmd'.JMML.`Ybmd9'  `Mbod"YML.YMMMMMb .JMML  JMML..JMML.`Moo9^Yo..JMML  JMML.
+                                             6'     dP                                       
+                                             Ybmmmd'</pre>
+  <pre class="ascii-art small" aria-hidden=true>
+                                 ,,  
+`7MM"""YMM                     `7MM 
+  MM    `7                       MM 
+  MM   d `7Mb,od8 .gP"Ya    ,M""bMM 
+  MM""MM   MM' "',M'   Yb ,AP    MM 
+  MM   Y   MM    8M"""""" 8MI    MM 
+  MM       MM    YM.    , `Mb    MM 
+.JMML.   .JMML.   `Mbmmd'  `Wbmd"MML</pre>
+</div>
+</div>
+        </section>
+        <section>
+            <div class="project-header small">
+                <a href="/index.html" class="home-link">
+                    <img src="/assets/images/icons/home.svg" alt="Home" height="30px" width="30px">
+                </a>
+                <h4 class="prefix small" aria-hidden="true">Project</h4>
+                <h1 class="project-title">
+                    Wordle Solver
+                </h1>
+                <p class="header-note small">Reading time: 5 min</p>
+            </div>
+            <div class="project-header large">
+                <div>
+                    <h4 class="prefix" aria-hidden="true">Project</h4>
+                    <h1 class="project-title">
+                        Wordle Solver
+                    </h1>
+                </div>
+                <div class="header-extras">
+                    <a href="/index.html" class="home-link">
+                        <img src="/assets/images/icons/home.svg" alt="Home" height="30px" width="30px">
+                    </a>
+                    <p class="header-note">Reading time: 5 min</p>
+                </div>
+            </div>
+            <hr>
+        </section>
+        <section class="project-description">
+            <p>"An algorithmic brute force solver for Wordle"</p>
+            <p class="year">2022</p>
+        </section>
+        <section class="content">
+            <h2 id="introduction" tabindex="-1">Introduction <a class="heading-anchor" href="#introduction" aria-hidden="true">§</a></h2>
+<p>On a random weekend in the midst of year 12 when <a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a> was at its peak and I was studying VCE Algorithmics, I decided to try and solve the Wordle using a brute force algorithm.</p>
+<p>For those that don't play, here are the instructions.</p>
+<img alt="Wordle instructions" src="images/wordle-instructions.png" width="600px">
+<br>
+<p>And here is how a game of Wordle looks when solved with my tool.</p>
+<br>
+<p><img src="/projects/wordle-solver/images/wreck-game.png" alt="Game of Wordle with solver"></p>
+<p>This project is on <a href="https://github.com/mcloughlan/Wordle-Solver">GitHub</a></p>
+<h2 id="algorithm" tabindex="-1">Algorithm <a class="heading-anchor" href="#algorithm" aria-hidden="true">§</a></h2>
+<p>The design was based on the simple intuituion of a regular player. Think of all the words that the answer could possibly be based on the letters remaining in the keyboard, and pick words that match the yellows and greens you have revealed on the board.</p>
+<p>The algorithm implimented this almost exactly. As you play it would score each possible answer from a list of <code>12947</code> words giving high scores to multiple matches of green or yellow and an additional point boost if the word was 'popular' and doesn't have duplicate letters.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_score</span><span class="token punctuation">(</span>word<span class="token punctuation">,</span> assumptions<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">list</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Score the word based on:
+    - Has green letter -> += 1.5
+    - Has yellow letter -> += 1
+    - Is popular += 0.5
+    - No duplicate letters += 1
+
+    Assumptions -> Each letter in form of: [[may be], [is not]] or when definite: "letter" -> "a"
+    """</span>
+    score <span class="token operator">=</span> <span class="token number">0.0</span>
+    <span class="token keyword">for</span> letter<span class="token punctuation">,</span> ass <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>word<span class="token punctuation">,</span> assumptions<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>ass<span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> letter <span class="token operator">==</span> ass<span class="token punctuation">:</span>
+                <span class="token comment"># This has already been figured out. This letter is fine</span>
+                <span class="token comment"># NOTE this can be changed back to a 2, 1 was for testing</span>
+                score <span class="token operator">+=</span> <span class="token number">1.5</span>
+                <span class="token keyword">continue</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token comment"># There is no way this word is valid</span>
+                <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
+        <span class="token keyword">elif</span> letter <span class="token keyword">in</span> ass<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token comment"># Letter has been spotted as a yellow match</span>
+            score <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">if</span> letter <span class="token keyword">in</span> ass<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token comment"># Letter has been explicitly proved impossible in this spot</span>
+            <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span><span class="token builtin">set</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token builtin">len</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># No duplicates</span>
+        score <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">if</span> word<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token keyword">in</span> POPULAR<span class="token punctuation">:</span>
+        <span class="token comment"># Word is commonly used</span>
+        score <span class="token operator">+=</span> <span class="token number">0.5</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>word<span class="token punctuation">,</span> score<span class="token punctuation">]</span></code></pre>
+<p>The solver would then rank each valid answer for you to attempt in order of decending score with the top 5 most optimal responses available for the user to select.</p>
+<h3 id="picking-an-optimal-starting-word" tabindex="-1">Picking An Optimal Starting Word <a class="heading-anchor" href="#picking-an-optimal-starting-word" aria-hidden="true">§</a></h3>
+<p>Everyone has a different starting word they like. But what is the best starting word? Well back when I made this, I figured <code>toeas</code> had the most potential.</p>
+<p>I ran a basic test where I iterated over every single valid Wordle word as the first guess in a Wordle game and the algorithm would assign it a fake match of <code>yggy-</code> and then rank the next word choice based on how many words it would invalidate. The test settled on <code>toeas</code> as it removed the most words. The example in <a href="#introduction">the introduction</a> removed 98.66% of possible answers.</p>
+<p>As I am writing this in 2026, I figured that that method was horrible and there was a simple way to redo this test much more effectively. So a second test was run where each input word was matched against <strong>every</strong> possible answer with the algorithm picking the highest scoring response each time. I.e. play every single game possible. Then I found that this whole alorithm sucked a lot and that the most optimal starting word was actually <code>clipt</code> with a win rate of 89.86%. However, <code>toeas</code> still remained the most potent starting word based on percentage of possible answers removed (91.3% versus 84.7% for <code>pints</code>). So if you strictly play by the algorithm, <code>clipt</code> is optimal. But if you deviate a bit, <code>toeas</code> might still be the best start.</p>
+<h3 id="limitations" tabindex="-1">Limitations <a class="heading-anchor" href="#limitations" aria-hidden="true">§</a></h3>
+<p>The scope of this project as small, and I identified a lot of limitations and room for improvement.</p>
+<ul>
+<li>Relvance of letters in guess
+<ul>
+<li>Guesses gives you suggestions with rare letters like x &amp; y, rather than priorising vowels and common letters
+<ul>
+<li>This is why you pick from 'top 5'</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Not playing on hard mode
+<ul>
+<li>The guesses adhere to hard mode, all previous hints must be used in next answer</li>
+<li>This means the script can have trouble gaining yellow letters if the board is mostly discovered</li>
+</ul>
+</li>
+<li>Optimisations
+<ul>
+<li>This is mostly brute force. A more efficient method may be beneficial such as a probabilsitc model to prioritise the testing of more optimal letters.</li>
+</ul>
+</li>
+<li>Doesn't explicity rule out the definite spots of yellow letters when you have ruled out the spots it's not in - See <a href="https://github.com/Sandwich1699975/Wordle-Solver/issues/1">#1</a></li>
+</ul>
+<h2 id="conclusion" tabindex="-1">Conclusion <a class="heading-anchor" href="#conclusion" aria-hidden="true">§</a></h2>
+<p>Overall I recall this being a fun project. It was a good way to disect a problem with my developing algorithmic mentality and find the true benefit in optimisation techniques.</p>
+
+        </section>
+    </main>
+
+    <footer>
+    <section>
+        <a href="/index.html">Home</a>
+        <p>&copy; 2026 Freddy Mcloughlan</p>
+        <p>Made with <a href="https://www.11ty.dev/docs/" class="soft">11ty</a></p>
+        <a href="/licences.html" class="soft">Licences</a>
+    </section>
+</footer>
+</body>
+
+</html>
