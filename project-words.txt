@@ -12,6 +12,8 @@ PCBA
 OENG
 Saleae
 JTAG
+Wordle
+yggy
 
 stupidaustralianworkdsdontwork
 favourite
@@ -20,3 +22,7 @@ analyse
 analyser
 analysers
 containerised
+prioritising
+Optimisations
+prioritise
+optimisation
