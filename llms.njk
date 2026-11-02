@@ -1,0 +1,22 @@
+---
+permalink: /llms.txt
+layout: null
+eleventyExcludeFromCollections: true
+---
+# Freddy Mcloughlan
+
+> Personal site of Freddy Mcloughlan: software, electronics, and project write-ups. Canonical URL: https://mcloughlan.com
+
+Project pages are first-person write-ups. GitHub documentation, where a project has it, is the technical reference.
+Public profiles: [GitHub](https://github.com/mcloughlan), [LinkedIn](https://www.linkedin.com/in/freddy-mcloughlan/), [Stack Overflow](https://stackoverflow.com/users/14141223/freddy-mcloughlan).
+
+## Site
+
+- [Home](https://mcloughlan.com/): Project index, job history, and profile links
+- [Algo Notes](https://algo.mcloughlan.com/): VCE Algorithmics notes, published separately from this site
+
+## Projects
+
+{% for project in collections.project | sort(attribute='data.year-start') | reverse -%}
+- [{{ project.data.title | safe }}](https://mcloughlan.com{{ project.url }}): {{ project.data.description | safe }}
+{% endfor %}
