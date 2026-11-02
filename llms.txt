@@ -1,0 +1,20 @@
+# Freddy Mcloughlan
+
+> Personal site of Freddy Mcloughlan: software, electronics, and project write-ups. Canonical URL: https://mcloughlan.com
+
+Project pages are first-person write-ups. GitHub documentation, where a project has it, is the technical reference.
+Public profiles: [GitHub](https://github.com/mcloughlan), [LinkedIn](https://www.linkedin.com/in/freddy-mcloughlan/), [Stack Overflow](https://stackoverflow.com/users/14141223/freddy-mcloughlan).
+
+## Site
+
+- [Home](https://mcloughlan.com/): Project index, job history, and profile links
+- [Algo Notes](https://algo.mcloughlan.com/): VCE Algorithmics notes, published separately from this site
+
+## Projects
+
+- [Algo Notes](https://mcloughlan.com/projects/algo-notes/): A markdown generated site for VCE Algorithmics notes
+- [NetCheck](https://mcloughlan.com/projects/netcheck/): A persistent network uptime and speed logging Grafana exporter intended for use on multiple Raspberry Pis
+- [Arduino Unit Testing Software](https://mcloughlan.com/projects/arduino-unit-pio/): An automated solution for running unit tests on hardware with PlatformIO and fake serial emulation for the DUT
+- [Wordle Solver](https://mcloughlan.com/projects/wordle-solver/): An algorithmic brute force solver for Wordle
+- [Musical Flamethrower](https://mcloughlan.com/projects/musical-flamethrower/): A propane candelabra that shot out flames in sync with a guitar hero guitar or a BeatSaber map
+
