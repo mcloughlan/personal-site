@@ -3,6 +3,7 @@ title: Musical Flamethrower
 description: A propane candelabra that shot out flames in sync with a guitar hero guitar or a BeatSaber map
 date_display: "2019"
 year-start: 2019
+year-end: 2019
 tags:
     - hardware
     - software

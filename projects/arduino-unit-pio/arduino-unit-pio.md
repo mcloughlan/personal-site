@@ -3,6 +3,7 @@ title: Arduino Unit Testing Software
 description: An automated solution for running unit tests on hardware with PlatformIO and fake serial emulation for the DUT
 date_display: "2024"
 year-start: 2024
+year-end: 2024
 tags:
     - firmware
     - software

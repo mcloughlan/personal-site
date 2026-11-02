@@ -9,6 +9,7 @@
         {% endif %}
     </title>
     <meta name="description" content="{{ description or 'Freddy Mcloughlan - Personal blog site' }}">
+    {% include "components/jsonld.njk" %}
     <!-- Open Graph / social sharing -->
     <meta property="og:title" content="{{ title or 'Freddy Mcloughlan' }}">
     <meta property="og:description" content="{{ description or 'Freddy Mcloughlan - Personal blog site' }}">

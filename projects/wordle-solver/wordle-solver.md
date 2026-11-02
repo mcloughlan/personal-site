@@ -3,6 +3,7 @@ title: Wordle Solver
 description: An algorithmic brute force solver for Wordle
 date_display: "2022"
 year-start: 2022
+year-end: 2022
 tags:
     - software
 ---

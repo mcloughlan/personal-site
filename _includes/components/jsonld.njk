@@ -1,0 +1,43 @@
+{% set site = "https://mcloughlan.com" %}
+{% set canonical = site + page.url %}
+{% if page.url == "/" or page.url == "/index.html" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "{{ site }}/#person",
+      "name": "Freddy Mcloughlan",
+      "url": "{{ site }}/",
+      "sameAs": [
+        "https://www.linkedin.com/in/freddy-mcloughlan/",
+        "https://github.com/mcloughlan",
+        "https://stackoverflow.com/users/14141223/freddy-mcloughlan",
+        "https://algo.mcloughlan.com/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site }}/#website",
+      "url": "{{ site }}/",
+      "name": "Freddy Mcloughlan",
+      "author": { "@id": "{{ site }}/#person" }
+    }
+  ]
+}
+</script>
+{% elif tags and "project" in tags %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "datePublished": {{ year-end | dump | safe }},
+  "url": {{ canonical | dump | safe }},
+  "mainEntityOfPage": {{ canonical | dump | safe }},
+  "author": { "@id": "{{ site }}/#person", "@type": "Person", "name": "Freddy Mcloughlan", "url": "{{ site }}/" }
+}
+</script>
+{% endif %}
