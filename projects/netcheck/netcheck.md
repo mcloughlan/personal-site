@@ -9,7 +9,7 @@ tags:
 favourite: true
 ---
 
-## Dashboard screenshot
+## Dashboard Screenshot
 
 ![Screenshot of the NetCheck interface](/projects/netcheck/images/summary.webp){width=800px height=1256px}
 
@@ -29,11 +29,11 @@ So there were no tools we could use to validate these issues, and no time to sit
 
 This needed to be as simple and easy to deploy as possible. With the capabilities for seamless scaling with multiple deployed nodes. The design also needed to be **completely free** (excluding paying for a raspberry pi) by using the free configuration of Grafana Cloud and the Grafana dashboard. Note that Ookla speedtest (one of the metric gatherers for this) has a rate limit for your IP.
 
-### Setup & deployability
+### Setup & Deployability
 
 With these restraints, I designed a system where each Pi would host a Docker container that runs the whole system which is configured to boot on start and restart on fail. This way, there was no painful setup across different systems and system-dependent errors were less common in development, given the whole thing was containerised. After the Docker setup, you could just pull the power plug on the Pi, move it around and plug it back in and the whole thing would **just work**. This achieved my goals of making it easy to deploy.
 
-### Scaling with ease
+### Scaling With Ease
 
 Now what if I want node 1 in this part of the building, then node 3 over here and node 2 can just sit in my office?
 
@@ -49,7 +49,7 @@ So I needed to
 1. Figure out if the device can run a test ("*will this test cause a rate limit?*")
 1. Run tests in a round robin way to equally query each device
 
-#### Speedtest distributor/orchestrator design
+#### Speedtest Distributor/Orchestrator Design
 
 *Firstly, shout-out to my wonderful friend and career mentor James Baker who put me onto the orchestrator/driver model.*
 
