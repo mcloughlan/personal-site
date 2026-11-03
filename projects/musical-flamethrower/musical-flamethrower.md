@@ -75,7 +75,7 @@ And I thought that was super cool, and luckily dad thought it was cool enough to
 
 This was my first proper project that went bigger than a few scripts.
 
-## The plan
+## The Plan
 
 I was only 15 and had no idea what I was doing. Software and electronics wise I could figure it out, but I couldn't weld or do anything with gas. So, thank you Dad for doing all the welding and making sure we didn't explode 👍.
 
@@ -266,7 +266,7 @@ time_hold.append(i)
 
 The codebase obviously wasn't perfect, but in the end it did everything I wanted it to do with no issues.
 
-### BPM RGB colouring
+### BPM RGB Colouring
 
 At the time of this project I was obsessed with ansi colors in the terminal (I still think they're cool). I decided that I wanted to color the BPM of the song to represent it's pace.
 
@@ -297,7 +297,7 @@ x \mapsto
 \end{cases}
 $$
 
-## Final words
+## Final Words
 
 I am so glad I had Dad to help me with this. This kinda started my love for programming and electronics in general.
 
