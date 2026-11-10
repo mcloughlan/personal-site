@@ -52,6 +52,7 @@ export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("CNAME");
     eleventyConfig.addPassthroughCopy("r.html");
     eleventyConfig.addPassthroughCopy("robots.txt");
+    eleventyConfig.addPassthroughCopy("favicon.ico");
     eleventyConfig.addPlugin(syntaxHighlight);
 
 }
