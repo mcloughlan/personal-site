@@ -34,7 +34,7 @@
   "@type": "BlogPosting",
   "headline": {{ title | dump | safe }},
   "description": {{ description | dump | safe }},
-  "datePublished": {{ year-end | dump | safe }},
+  "datePublished": {{ date_last_updated | dump | safe}},
   "url": {{ canonical | dump | safe }},
   "mainEntityOfPage": {{ canonical | dump | safe }},
   "author": { "@id": "{{ site }}/#person", "@type": "Person", "name": "Freddy Mcloughlan", "url": "{{ site }}/" }

@@ -2,8 +2,9 @@
 title: Wordle Solver
 description: An algorithmic brute force solver for Wordle
 date_display: "2022"
-year-start: 2022
-year-end: 2022
+year_start: 2022
+year_end: 2022
+date_last_updated: "2026-11-02"
 tags:
     - software
 ---

@@ -2,8 +2,9 @@
 title: Algo Notes
 description: A markdown generated site for VCE Algorithmics notes
 date_display: "2025"
-year-start: 2025
-year-end: 2025
+year_start: 2025
+year_end: 2025
+date_last_updated: "2026-11-02"
 tags:
     - software
 ---

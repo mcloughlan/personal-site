@@ -17,6 +17,6 @@ Public profiles: [GitHub](https://github.com/mcloughlan), [LinkedIn](https://www
 
 ## Projects
 
-{% for project in collections.project | sort(attribute='data.year-start') | reverse -%}
+{% for project in collections.project | sort(attribute='data.year_start') | reverse -%}
 - [{{ project.data.title | safe }}](https://mcloughlan.com{{ project.url }}): {{ project.data.description | safe }}
 {% endfor %}
