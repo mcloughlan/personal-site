@@ -1,6 +1,6 @@
 ---
 title: Poop Map Leaderboard
-description: Healthy bowel movement tracking, turned competitive. 
+description: A mandated bowel movement tracking regiment, turned competitive. 
 date_display: "2022"
 year_start: 2022
 tags:
