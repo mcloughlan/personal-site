@@ -6,6 +6,7 @@ Saber
 inspo
 desmos
 IREC
+SRAD
 CHES
 Algorithmics
 FredTech

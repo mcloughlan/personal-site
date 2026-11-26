@@ -27,12 +27,20 @@
         "logo": "hive.svg",
         "positions": [
             {
-                "title": "IREC Team Lead",
-                "year_start": "2025",
+                "title": "Force Ghost",
+                "year_start": "2026",
                 "year_end": "Present",
                 "highlights": [
-                    "Leading a cross-disciplinary team of 40+ student engineers building a student-researched and designed high-power sounding rocket for the International Rocket Engineering Competition (IREC) in Texas, USA (2026), from carbon fibre airframe to firmware on a custom flight computer.",
-                    "Overseeing integration across subsystems, competition compliance, recruitment (150+ applicants), and sponsorships."
+                    "Advisory and mentorship role for upcoming teams, while contributing to events, media, and technical projects including the Horizon Documentary and the ground control station rebuild."
+                ]
+            },
+            {
+                "title": "IREC Team Lead",
+                "year_start": "2025",
+                "year_end": "2026",
+                "highlights": [
+                    "Led a cross-disciplinary team of 50+ student engineers building a student-researched and designed high-power sounding rocket that competed at the International Rocket Engineering Competition (IREC) in Texas, USA, from carbon fibre airframe to firmware on a custom flight computer.",
+                    "Placed 1st in Live Telemetry, and 2nd in the 10k SRAD Hybrid category, Payload, and Best Photo."
                 ]
             },
             {
@@ -58,6 +66,14 @@
         "company": "Google",
         "logo": "google.svg",
         "positions": [
+            {
+                "title": "Software Developer Intern",
+                "year_start": "2026",
+                "year_end": "2027",
+                "highlights": [
+                    "Part of the NetSoft team - Google Global Infrastructure"
+                ]
+            },
             {
                 "title": "Associate Software Developer Intern",
                 "year_start": "2025",
