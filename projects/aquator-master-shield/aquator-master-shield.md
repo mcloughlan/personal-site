@@ -43,6 +43,6 @@ The commands made it to the shield board, but were jumbled up before they made i
 
 ![Debugging screenshots](/projects/aquator-master-shield/images/aquator-debug.png)
 
-I had routed the PCB poorly, failed to implement signal integrity principles and used overly long DuPonts like it was an Arduino project. It needs another revision, but I put it to sleep shortly before my internship in 2025, and it has stayed there since.
+I had routed the PCB poorly, failed to implement signal integrity principles and used overly long DuPonts like it was an Arduino project. Although, you can see that when the Aquator is not connected, the signal is fine. Perhaps my only Aquator board was broken. It needs another revision with an actual RS-232 test device to connect with for debugging, but I put it to sleep shortly before my internship in 2025, and it has stayed there since.
 
 I shall update this project if I come back to it.
