@@ -14,15 +14,6 @@
     <br>
     <br>
 
-    <span
-        style="opacity: 1; background-color: rgba(200, 142, 25, 0.262);padding: 1rem;border-radius: 10px;border: thin solid rgb(136, 88, 0);">
-        <strong>
-            This will look empty for a few more months! Yet to write the other ones
-        </strong>
-        <br>
-        I have over 10 articles and projects I want to write. I am drowning in other things, so this will be done later in 2026. I will do it though
-    </span>
-
     <table id="project-table">
         <thead>
             <tr>
@@ -33,7 +24,7 @@
         </thead>
         <tbody>
             {% for project in collections.project | sort(attribute='data.year_start') | reverse %}
-            <tr>
+            <tr{% if "placeholder" in project.data.tags %} class="placeholder"{% endif %}>
                 <td class="name-col">
                     <div class="title-subtitle">
                         <span>

@@ -217,6 +217,22 @@ tbody tr:nth-child(even):hover {
     background: var(--color-accent-1-minimal);
 }
 
+tbody tr.placeholder {
+    opacity: 0.4;
+}
+
+tbody tr.placeholder:hover {
+    background: transparent;
+}
+
+tbody tr.placeholder:nth-child(even):hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+tbody tr.placeholder td a:hover {
+    color: var(--color-accent-1);
+}
+
 tbody td a {
     transition: color 0.2s ease;
 }
@@ -357,6 +373,11 @@ table span.tag.flames {
 table span.tag.PCB {
     background-color: #027206;
     border-color: #044700;
+}
+
+table span.tag.placeholder {
+    background-color: #0f0f0f;
+    border-color: #2e2e2e;
 }
 
 
