@@ -27,7 +27,7 @@ I originally created a board that used a HID IC, instead of a UART IC. It was a 
 
 ![PCB with wrong IC](/projects/aquator-master-shield/images/pcb.jpg)
 
-The first PCB
+The first PCB. I used 0802 components to make DIY assembly easier and I was initially going to make the PCB footprint as small as possible and use a plastic faceplate for the enclosure. But I ended up using the actual PCB as the faceplate. Hence the crammed electronics and the huge board.
 
 <br>
 
