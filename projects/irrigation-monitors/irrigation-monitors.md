@@ -9,7 +9,7 @@ tags:
     - placeholder
     - hardware
     - software
-    - PCBs
+    - PCB
 ---
 
 Yet to be written ...

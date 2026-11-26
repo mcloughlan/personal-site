@@ -9,5 +9,5 @@ tags:
     - hardware
     - software
     - flames
-    - PCBs
+    - PCB
 ---
