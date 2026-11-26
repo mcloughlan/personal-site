@@ -18,3 +18,10 @@ uptime
 clipt
 Australis
 mcloughlan
+Aquator
+UART
+Arduinos
+WROOM
+datasheet
+DuPonts
+DuPont
