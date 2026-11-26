@@ -3,6 +3,7 @@ title: Aquator Master Shield
 description: Making old RS-232 farming equipment USB compatible 
 date_display: "2025"
 year_start: 2025
+date_last_updated: "2026-11-26"
 tags:
     - PCB
 ---
