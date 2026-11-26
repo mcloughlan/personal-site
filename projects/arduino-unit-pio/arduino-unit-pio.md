@@ -32,11 +32,11 @@ What I needed was a solution that:
   <img alt="hardware in project" src="/projects/arduino-unit-pio/images/setup.png" style="width: calc(40% - 0.5rem)">
 </div>
 
-This is all hosted on [Github!](https://github.com/mcloughlan/ArduinoUnitPlatformIO)
+This is all hosted on [GitHub!](https://github.com/mcloughlan/ArduinoUnitPlatformIO)
 
 ## Implementation
 
-Turns out, PlatformIO has it's own [test runner framework](https://docs.platformio.org/en/latest/advanced/unit-testing/frameworks/custom/runner.html) which makes the deployment and output capture easy. AND, Saleae has an API for it's logic analysers.
+Turns out, PlatformIO has its own [test runner framework](https://docs.platformio.org/en/latest/advanced/unit-testing/frameworks/custom/runner.html) which makes the deployment and output capture easy. AND, Saleae has an API for its logic analysers.
 
 Perfect.
 
@@ -117,7 +117,7 @@ Then all of this data is presented nicely in PlatformIO's test output window
 source [PlatformIO](https://piolabs.com/blog/insights/unit-testing-part-2.html)
 
 - Because it's flashed over JTAG, the ESP32's main serial line over USB is free. That could be used as the main test output stream if ever needed.
-- Another bonus of this, is that I routed my GPIO outputs (lights, relays, etc) to the serial analyser, so I can add tests for my GPIO pins to be at certain levels and capture that as well.
+- Another bonus of this is that I routed my GPIO outputs (lights, relays, etc) to the logic analyser, so I can add tests for my GPIO pins to be at certain levels and capture that as well.
 - Because I opted for a CSV intermediary from the logic analyser, the entire test report is stored and timestamped byte for byte if I needed to analyse it later.
 
 ## Conclusion

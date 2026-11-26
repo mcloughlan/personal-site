@@ -13,7 +13,7 @@ tags:
 
 Back in year 12 I took all of my digital notes for VCE Algorithmics in [Obsidian](https://obsidian.md/) for [VCE Algorithmics](https://www.vcaa.vic.edu.au/curriculum/vce-curriculum/vce-study-designs/algorithmics/vce-algorithmics-hess), a high school version of 'Algorithms and Analysis'.
 
-When I got my job at CHES tutoring that same class, I discovered good ol' [MkDocs](https://www.mkdocs.org/). A documentation static site generator (SSG) that runs on markdown files. The same files that I wrote all my Obsidian notes in! As a learning exercise to try another SSG (other than [11ty](https://www.11ty.dev/)) and to avoid printing 100's of pages of Obsidian notes for my students, I created [algo.mcloughlan.com](https://algo.mcloughlan.com/).
+When I got my job at CHES tutoring that same class, I discovered good ol' [MkDocs](https://www.mkdocs.org/). A documentation static site generator (SSG) that runs on markdown files. The same files that I wrote all my Obsidian notes in! As a learning exercise to try another SSG (other than [11ty](https://www.11ty.dev/)) and to avoid printing hundreds of pages of Obsidian notes for my students, I created [algo.mcloughlan.com](https://algo.mcloughlan.com/).
 
 ## Site Demo
 

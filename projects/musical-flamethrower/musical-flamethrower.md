@@ -1,6 +1,6 @@
 ---
 title: Musical Flamethrower
-description: A propane candelabra that shot out flames in sync with a guitar hero guitar or a BeatSaber map
+description: A propane candelabra that shot out flames in sync with a guitar hero guitar or a Beat Saber map
 date_display: "2019"
 year_start: 2019
 year_end: 2019
@@ -22,11 +22,11 @@ That's Dad in the pic btw
 The image above was the first version of the project. It had 4 outlets. Each outlet had a constant flow of gas which was ignited as a pilot light. Each of them also had a solenoid controlled auxiliary line that would allow more gas to flow into the outlet section. Controlling these solenoids would make big flames come out the top.
 This particular version had a lower pressure gas regulator than later versions, and the solenoids were hard wired to a bunch of buttons on a breadboard.
 
-Later on I moved to a larger gas regulator and controlled the solenoids with the map files from BeatSaber, as shown below
+Later on I moved to a larger gas regulator and controlled the solenoids with the map files from Beat Saber, as shown below
 
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/MHODnGwUUMo?si=I5wV2YAHRVcvnk8L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Below on the left is a Beatsaber generated song, and the right is manual control with a Guitar Hero guitar
+Below on the left is a Beat Saber-generated song, and the right is manual control with a Guitar Hero guitar
 
 <div class=yt-shorts-double>
   <iframe width="50%" height="560"
@@ -82,9 +82,9 @@ I was only 15 and had no idea what I was doing. Software and electronics wise I 
 
 But I knew where to start with the control. I had used an Arduino before which was a start.
 
-I decided I was going to have control over the flames with some buttons and a Guitar Hero guitar like I'd seen in the inspo video. But I had also just discovered the world of virtual reality and a game called Beatsaber. For some context, this is Beatsaber below
+I decided I was going to have control over the flames with some buttons and a Guitar Hero guitar like I'd seen in the inspo video. But I had also just discovered the world of virtual reality and a game called Beat Saber. For some context, this is Beat Saber below
 
-![Beatsaber gameplay](/projects/musical-flamethrower/images/beatsaber-gameplay.gif){width=400px}
+![Beat Saber gameplay](/projects/musical-flamethrower/images/beatsaber-gameplay.gif){width=400px}
 
 It's virtual reality Fruit Ninja Guitar Hero. The blocks come flying at you in sync with a song, and you chop them up in the right direction. These blocks would become instructions for the solenoids later on ...
 
@@ -126,12 +126,12 @@ Regardless, here's a video of me using the controller to actuate the solenoids.
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen></iframe>
 
-### Beatsaber
+### Beat Saber
 
 Now, this was probably my favourite.
 Remembering back to the gameplay of a Guitar Hero Fruit Ninja game
 
-![Beatsaber gameplay](/projects/musical-flamethrower/images/beatsaber-gameplay.gif){width=400px}
+![Beat Saber gameplay](/projects/musical-flamethrower/images/beatsaber-gameplay.gif){width=400px}
 
 Each of the blocks in a map are stored internally with a timestamp, row and column value inside a `.dat` file
 
@@ -158,7 +158,7 @@ Each of the blocks in a map are stored internally with a timestamp, row and colu
 
 If we only consider the `_time` and `_lineIndex` (column) value, we can convert this data into a set of timestamped bursts for 4 different flames.
 
-![Beatsaber block alignment row illustration](/projects/musical-flamethrower/images/beatsaber-grids.gif){width=400px}
+![Beat Saber block alignment row illustration](/projects/musical-flamethrower/images/beatsaber-grids.gif){width=400px}
 
 So I made a script that would go through all the `_notes` in a game file and extract the time and column value into a massive list like this
 
@@ -172,7 +172,7 @@ So I made a script that would go through all the `_notes` in a game file and ext
 ]
 ```
 
-In the first list of the 2D list above `[9.875, 0, 0, 1, 1]`, the `9.875` is the time the block appears, and the set of 4 numbers after are the boolean values for the relays. The `0, 0, 1, 1` means that the 2 most left relays remain off whilst the 2 far right ones are on.
+In the first list of the 2D list above `[9.875, 0, 0, 1, 1]`, the `9.875` is the time the block appears, and the set of 4 numbers after are the boolean values for the relays. The `0, 0, 1, 1` means that the 2 leftmost relays remain off whilst the 2 rightmost ones are on.
 
 Then, it's just a matter of starting a software stopwatch and triggering a burst of flames each time a block is detected
 
@@ -197,7 +197,7 @@ In fact, looking back at this code in particular, I think it might have a few is
 
 ### Struggle
 
-I would also like to note that I was so incredibly bad at coding that I re-invented the `continue` keyword by accident. I think this took me like 1 hour of debugging. Clearly my first experience with it's use case
+I would also like to note that I was so incredibly bad at coding that I re-invented the `continue` keyword by accident. I think this took me like 1 hour of debugging. Clearly my first experience with its use case
 
 **Before learning about `continue`**
 
@@ -269,11 +269,11 @@ The codebase obviously wasn't perfect, but in the end it did everything I wanted
 
 ### BPM RGB Colouring
 
-At the time of this project I was obsessed with ansi colors in the terminal (I still think they're cool). I decided that I wanted to color the BPM of the song to represent it's pace.
+At the time of this project I was obsessed with ANSI colours in the terminal (I still think they're cool). I decided that I wanted to colour the BPM of the song to represent its pace.
 
 ![numbers 1 to 300 coloured white to green to red](/projects/musical-flamethrower/images/BPM-colored-text.png)
 
-Obviously a song at 60 BPM is tame, and a song at 300 is bonkers. I set some basic thresholds for color ranges and began playing with the Google color picker. From there, I made a [Desmos](https://www.desmos.com/calculator/o2gcqlowq6) with some outrageous ramps to pick individual Red, Green and Blue values based on the BPM (x axis).
+Obviously a song at 60 BPM is tame, and a song at 300 is bonkers. I set some basic thresholds for colour ranges and began playing with the Google colour picker. From there, I made a [Desmos](https://www.desmos.com/calculator/o2gcqlowq6) with some outrageous ramps to pick individual Red, Green and Blue values based on the BPM (x axis).
 
 ![screen capture of a Desmos function scanning over different BPM values](/projects/musical-flamethrower/images/desmos.gif)
 
@@ -302,4 +302,4 @@ $$
 
 I am so glad I had Dad to help me with this. This kinda started my love for programming and electronics in general.
 
-If anyone reading this wants to help build a new new one, please message me :)
+If anyone reading this wants to help build a new one, please message me :)

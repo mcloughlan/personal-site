@@ -48,7 +48,7 @@
                 "year_start": "2025",
                 "year_end": "2025",
                 "highlights": [
-                    "Designed and built the Hive Ground Station Control (GCS) backend for IREC, portable to future Australis-series rockets, includes a custom HAL for radio systems, telemetry ingest, half-duplex LoRa networking, logging, device mocking, full CI workflows and CLI-driven deployment (C++ / Python, service architecture).",
+                    "Designed and built the Hive Ground Control Station (GCS) backend for IREC, portable to future Australis-series rockets, and includes a custom HAL for radio systems, telemetry ingest, half-duplex LoRa networking, logging, device mocking, full CI workflows and CLI-driven deployment (C++ / Python, service architecture).",
                     "GitHub: https://github.com/RMIT-Competition-Rocketry/GCS"
                 ]
             }
@@ -93,7 +93,7 @@
                 "year_start": "2023",
                 "year_end": "2025",
                 "highlights": [
-                    "Supported ~50 students in VCE Algorithmics (a derivation of Algorithms & Analysis) with one-to-one consults.",
+                    "Supported ~50 students in VCE Algorithmics (a derivative of Algorithms & Analysis) with one-to-one consults.",
                     "Facilitated breakout sessions and produced instructional lecture-style videos."
                 ]
             }

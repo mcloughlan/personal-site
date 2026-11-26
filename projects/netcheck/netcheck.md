@@ -22,7 +22,7 @@ I used to work at a residential college where the IT team had the occasional iss
 
 We didn't have access to any of the AP infrastructure, as this was managed by an external provider. But any time we wanted an issue solved with the network we needed to contact that provider with details of the issue. So we needed to both verify the issue ourselves, and build a case for the provider to look into.
 
-So there were no tools we could use to validate these issues, and no time to sit next to an AP and check it was playing up. That's where this project came into play. The idea was we could just leave a bunch of Raspberry Pis in locations that were possibly troublesome, and then wait for them to pickup an issue automatically.
+So there were no tools we could use to validate these issues, and no time to sit next to an AP and check it was playing up. That's where this project came into play. The idea was we could just leave a bunch of Raspberry Pis in locations that were possibly troublesome, and then wait for them to pick up an issue automatically.
 
 ## Design
 
@@ -41,7 +41,7 @@ Now what if I want node 1 in this part of the building, then node 3 over here an
 Well the visualisation and UI design of this was easy. Given each device has a [hard coded name in the config](https://github.com/mcloughlan/NetCheck/blob/3494e07d93f0e3dabec84038ad4d26f69902a494/templates/.env.template#L20), Grafana would have a dedicated section for the device you selected at the top (see [dashboard](#dashboard-screenshot)). Then if you had multiple devices, they would just tile up next to each other in the upper summary section. Pushing to the database was also okay, because you have each device with a different name.
 
 But the hard part was adhering to the *'one speedtest per hour per IP address'* rule by Ookla.
-Given there was no obvious way to ask Ookla if the next test test would be limited (they probably rate limit with more rules than just 1 per hour), I decided I would just keep tabs on how many I've been running, and who's turn it is.
+Given there was no obvious way to ask Ookla if the next test would be limited (they probably rate limit with more rules than just 1 per hour), I decided I would just keep tabs on how many I've been running, and whose turn it is.
 
 So I needed to
 
@@ -77,7 +77,7 @@ Then, based on the number of devices online and the time the device joined the s
 
 ![distributor design flowchart](https://raw.githubusercontent.com/mcloughlan/NetCheck/main/assets/distributor.svg){loading=lazy}
 
-This design relies on the fact that Ookla allows tests 'on demand' rather than following an exact and strict regiment of 'one per hour per IP'. It also assumes the user is setting up NetCheck on the one LAN with a single WAN IP shared between all clients. Otherwise each client would be limited more than they need to be.
+This design relies on the fact that Ookla allows tests 'on demand' rather than following an exact and strict regimen of 'one per hour per IP'. It also assumes the user is setting up NetCheck on the one LAN with a single WAN IP shared between all clients. Otherwise each client would be limited more than they need to be.
 
 Also an hour [wasn't hard coded](https://github.com/mcloughlan/NetCheck/blob/3494e07d93f0e3dabec84038ad4d26f69902a494/docker-compose.yml#L14) in the case someone had a [private speedtest server](https://github.com/mcloughlan/NetCheck/blob/3494e07d93f0e3dabec84038ad4d26f69902a494/docker-compose.yml#L16) and could run a test every few minutes.
 

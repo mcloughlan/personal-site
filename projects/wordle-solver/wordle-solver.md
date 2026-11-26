@@ -82,10 +82,10 @@ As I am writing this in 2026, I figured that that method was horrible and there 
 
 ### Limitations
 
-The scope of this project as small, and I identified a lot of limitations and room for improvement.
+The scope of this project was small, and I identified a lot of limitations and room for improvement.
 
 - Relevance of letters in guess
-  - Guesses gives you suggestions with rare letters like x & y, rather than prioritising vowels and common letters
+  - Guesses give you suggestions with rare letters like x & y, rather than prioritising vowels and common letters
     - This is why you pick from 'top 5'
 - Not playing on hard mode
   - The guesses adhere to hard mode, all previous hints must be used in next answer

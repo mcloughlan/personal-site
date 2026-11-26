@@ -1,6 +1,6 @@
 ---
 title: Irrigation Monitors
-description: A custom PCB to notify farmers of finished watering by SMS. Reduced product production cost by 2.5x
+description: A custom PCB to notify farmers of finished watering by SMS. It cut production cost by 2.5x
 date_display: "2022-2024"
 year_start: 2022
 favourite: true
